@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   Storage, computeDates, getDaysElapsed, getWeekDates, isDayDisabled,
-  getParams, DAYS, WEEKLY_CHECKINS, initWeekData, s,
+  getParams, DAYS, WEEKLY_CHECKINS, initWeekData, dateKey, migrateChecksFormat, s,
 } from "./RecompTracker";
 
 export default function PublicProfile() {
@@ -82,8 +82,11 @@ export default function PublicProfile() {
   const WEEK_LABELS = Array.from({ length: dates.totalWeeks }, (_, i) => `Week ${i + 1}`);
   const maxWeek = dates.totalWeeks - 1;
 
-  const weeklyHits = (pid) => data.checks[pid]?.filter(Boolean).length || 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
+  const weeklyHits = (pid) => DAYS.reduce((sum, _, i) => {
+    const dk = dateKey(dates.gridStart, week, i);
+    return sum + (data.checks[dk]?.[pid] ? 1 : 0);
+  }, 0);
   const maxHits = params.reduce((sum, p) => sum + Math.min(p.weeklyTarget, activeDays), 0);
   const totalHits = params.reduce((sum, p) => sum + Math.min(weeklyHits(p.id), Math.min(p.weeklyTarget, activeDays)), 0);
   const adherence = maxHits > 0 ? Math.min(100, Math.round((totalHits / maxHits) * 100)) : 0;
@@ -93,16 +96,26 @@ export default function PublicProfile() {
     if (!allWeeksData.length) return 0;
     let hits = 0, possible = 0;
     allWeeksData.forEach((weekData, wk) => {
+      const migrated = migrateChecksFormat(weekData, wk, dates.gridStart);
       const wkActiveDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(wk, i, disabled0) ? 0 : 1), 0);
       params.forEach(p => {
         const target = Math.min(p.weeklyTarget, wkActiveDays);
         possible += target;
-        hits += Math.min(weekData.checks[p.id]?.filter(Boolean).length || 0, target);
+        let paramHits = 0;
+        DAYS.forEach((_, i) => {
+          const dk = dateKey(dates.gridStart, wk, i);
+          if (migrated.checks[dk]?.[p.id]) paramHits++;
+        });
+        hits += Math.min(paramHits, target);
       });
     });
     return possible > 0 ? Math.min(100, Math.round((hits / possible) * 100)) : 0;
   })();
-  const dayScore = (i) => isDayDisabled(week, i, disabled0) ? -1 : params.reduce((sum, p) => sum + (data.checks[p.id]?.[i] ? 1 : 0), 0);
+  const dayScore = (i) => {
+    if (isDayDisabled(week, i, disabled0)) return -1;
+    const dk = dateKey(dates.gridStart, week, i);
+    return params.reduce((sum, p) => sum + (data.checks[dk]?.[p.id] ? 1 : 0), 0);
+  };
 
   const elapsed = getDaysElapsed(dates.protocolStart, dates.endDate, dates.totalDays);
   const pct = Math.min(100, Math.round((elapsed / dates.totalDays) * 100));
@@ -177,10 +190,12 @@ export default function PublicProfile() {
             </div>
             {allWeeksData.map((weekData, wk) => {
               let hits = 0, possible = 0;
+              const migratedWk = migrateChecksFormat(weekData, wk, dates.gridStart);
               DAYS.forEach((_, dayIdx) => {
                 if (isDayDisabled(wk, dayIdx, disabled0)) return;
                 possible += params.length;
-                params.forEach(p => { if (weekData.checks[p.id]?.[dayIdx]) hits++; });
+                const dk = dateKey(dates.gridStart, wk, dayIdx);
+                params.forEach(p => { if (migratedWk.checks[dk]?.[p.id]) hits++; });
               });
               const pctWk = possible > 0 ? Math.min(100, Math.round((hits / possible) * 100)) : 0;
               const isCurrentWk = wk === week;
@@ -260,7 +275,8 @@ export default function PublicProfile() {
               </div>
               {DAYS.map((_, i) => {
                 const dis = isDayDisabled(week, i, disabled0);
-                const checked = !dis && data.checks[param.id]?.[i];
+                const dk = dateKey(dates.gridStart, week, i);
+                const checked = !dis && data.checks[dk]?.[param.id];
                 return (
                   <div key={i} style={{
                     ...s.cell,

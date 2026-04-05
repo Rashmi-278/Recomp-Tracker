@@ -55,6 +55,34 @@ const getCurrentWeek = (gridStart, totalWeeks) => {
   return Math.min(totalWeeks - 1, Math.floor((now - gridStart) / (1000 * 60 * 60 * 24 * 7)));
 };
 
+// ─── Date key for checks (ISO date string for a specific cell) ───
+const dateKey = (gridStart, weekIdx, dayIdx) => {
+  const d = new Date(gridStart);
+  d.setDate(d.getDate() + weekIdx * 7 + dayIdx);
+  return d.toISOString().slice(0, 10);
+};
+
+// ─── Migrate old array-based checks to date-keyed format ───
+const migrateChecksFormat = (data, weekIdx, gridStart) => {
+  if (!data?.checks) return data;
+  const firstKey = Object.keys(data.checks)[0];
+  if (!firstKey) return data; // empty, already new format
+  if (/^\d{4}-\d{2}-\d{2}$/.test(firstKey)) return data; // already date-keyed
+  // Old format: { paramId: [bool × 7] }
+  const newChecks = {};
+  Object.entries(data.checks).forEach(([paramId, boolArray]) => {
+    if (!Array.isArray(boolArray)) return;
+    boolArray.forEach((checked, dayIdx) => {
+      if (checked) {
+        const dk = dateKey(gridStart, weekIdx, dayIdx);
+        if (!newChecks[dk]) newChecks[dk] = {};
+        newChecks[dk][paramId] = true;
+      }
+    });
+  });
+  return { ...data, checks: newChecks };
+};
+
 // ─── Dynamic PARAMS based on user profile goals ───
 function getParams(profile) {
   const cal = profile?.calorieDeficit || 500;
@@ -98,11 +126,9 @@ const HYPE_MESSAGES = [
 ];
 
 const initWeekData = () => {
-  const checks = {};
-  PARAM_IDS.forEach((id) => { checks[id] = Array(7).fill(false); });
   const weekly = {};
   WEEKLY_CHECKINS.forEach((w) => { weekly[w.id] = w.type === "rating" ? null : ""; });
-  return { checks, weekly, notes: "" };
+  return { checks: {}, weekly, notes: "" };
 };
 
 // ─── Session Security (HMAC-signed anonymous sessions) ───
@@ -444,7 +470,7 @@ export const Storage = {
 };
 
 // ─── Shared exports for PublicProfile ───
-export { computeDates, getDaysElapsed, getCurrentWeek, getWeekDates, isDayDisabled, getParams, PARAM_IDS, WEEKLY_CHECKINS, DAYS, initWeekData };
+export { computeDates, getDaysElapsed, getCurrentWeek, getWeekDates, isDayDisabled, getParams, PARAM_IDS, WEEKLY_CHECKINS, DAYS, initWeekData, dateKey, migrateChecksFormat };
 
 // ─── CSS (moved out of render to avoid re-injection) ───
 const APP_CSS = `
@@ -906,12 +932,21 @@ export default function RecompTracker() {
     setLoading(true);
     Storage.load(week, userId).then((saved) => {
       if (cancelled) return;
-      const d = saved || initWeekData();
+      let d = saved || initWeekData();
+      // Migrate old array-based checks to date-keyed format
+      if (dates) {
+        const migrated = migrateChecksFormat(d, week, dates.gridStart);
+        if (migrated !== d) {
+          d = migrated;
+          Storage.save(week, d, userId); // re-save in new format silently
+        }
+      }
       setData(d);
       latestDataRef.current = d;
       const scores = {};
       for (let i = 0; i < 7; i++) {
-        scores[i] = params.reduce((sum, p) => sum + (d.checks[p.id]?.[i] ? 1 : 0), 0);
+        const dk = dates ? dateKey(dates.gridStart, week, i) : null;
+        scores[i] = params.reduce((sum, p) => sum + (dk && d.checks[dk]?.[p.id] ? 1 : 0), 0);
       }
       prevScoresRef.current = scores;
       setLoading(false);
@@ -975,11 +1010,11 @@ export default function RecompTracker() {
 
   const toggleCheck = (paramId, dayIdx) => {
     if (!dates || isDayDisabled(week, dayIdx, dates.disabledDaysInWeek0)) return;
+    const dk = dateKey(dates.gridStart, week, dayIdx);
     const next = { ...data, checks: { ...data.checks } };
-    next.checks[paramId] = [...next.checks[paramId]];
-    next.checks[paramId][dayIdx] = !next.checks[paramId][dayIdx];
+    next.checks[dk] = { ...(next.checks[dk] || {}), [paramId]: !next.checks[dk]?.[paramId] };
 
-    const newScore = params.reduce((sum, p) => sum + (next.checks[p.id]?.[dayIdx] ? 1 : 0), 0);
+    const newScore = params.reduce((sum, p) => sum + (next.checks[dk]?.[p.id] ? 1 : 0), 0);
     const oldScore = prevScoresRef.current[dayIdx] || 0;
 
     if (newScore === params.length && oldScore < params.length) {
@@ -995,13 +1030,23 @@ export default function RecompTracker() {
     persist({ ...data, notes: trimmed });
   };
 
-  const weeklyHits = (pid) => data.checks[pid]?.filter(Boolean).length || 0;
   const disabled0 = dates ? dates.disabledDaysInWeek0 : 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
+  const weeklyHits = (pid) => {
+    if (!dates) return 0;
+    return DAYS.reduce((sum, _, i) => {
+      const dk = dateKey(dates.gridStart, week, i);
+      return sum + (data.checks[dk]?.[pid] ? 1 : 0);
+    }, 0);
+  };
   const maxHits = params.reduce((sum, p) => sum + Math.min(p.weeklyTarget, activeDays), 0);
   const totalHits = params.reduce((sum, p) => sum + Math.min(weeklyHits(p.id), Math.min(p.weeklyTarget, activeDays)), 0);
   const adherence = maxHits > 0 ? Math.min(100, Math.round((totalHits / maxHits) * 100)) : 0;
-  const dayScore = (i) => isDayDisabled(week, i, disabled0) ? -1 : params.reduce((sum, p) => sum + (data.checks[p.id]?.[i] ? 1 : 0), 0);
+  const dayScore = (i) => {
+    if (isDayDisabled(week, i, disabled0) || !dates) return -1;
+    const dk = dateKey(dates.gridStart, week, i);
+    return params.reduce((sum, p) => sum + (data.checks[dk]?.[p.id] ? 1 : 0), 0);
+  };
 
   const WEEK_LABELS = dates ? Array.from({ length: dates.totalWeeks }, (_, i) => `Week ${i + 1}`) : [];
   const maxWeek = dates ? dates.totalWeeks - 1 : 0;
@@ -1222,7 +1267,8 @@ export default function RecompTracker() {
                 </div>
                 {DAYS.map((_, i) => {
                   const dis = isDayDisabled(week, i, disabled0);
-                  const checked = !dis && data.checks[param.id]?.[i];
+                  const dk = dates ? dateKey(dates.gridStart, week, i) : null;
+                  const checked = !dis && dk && data.checks[dk]?.[param.id];
                   return (
                     <button key={i}
                       className="rc-cell"
