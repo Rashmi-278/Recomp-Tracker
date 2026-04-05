@@ -416,7 +416,13 @@ export const Storage = {
     const key = `recomp-${userId}-lifts-all`;
     if (shouldUseRedis(userId)) {
       const raw = await redis.get(key);
-      if (raw) return typeof raw === "string" ? JSON.parse(raw) : raw;
+      if (raw) {
+        // raw is the Upstash result — may be a plain object, a JSON string,
+        // or a double-encoded JSON string (from the seed script).
+        let parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+        if (typeof parsed === "string") parsed = JSON.parse(parsed);
+        return parsed;
+      }
     }
     const local = localStorage.getItem(key);
     return local ? JSON.parse(local) : null;
