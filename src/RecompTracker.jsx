@@ -327,10 +327,17 @@ export const Storage = {
     if (migrated) return;
     for (let i = 0; i < 14; i++) {
       const oldKey = `recomp-week-${i}`;
-      const raw = localStorage.getItem(oldKey);
+      // Check localStorage first, then fall back to Redis (data may only exist there
+      // if the user tracked on multiple devices before auth was added)
+      let raw = localStorage.getItem(oldKey);
+      if (!raw && shouldUseRedis(userId)) {
+        try { raw = await redis.get(oldKey); } catch {}
+      }
       if (raw) {
         const newKey = `recomp-${userId}-week-${i}`;
-        if (!localStorage.getItem(newKey)) {
+        const alreadyMigrated = localStorage.getItem(newKey) ||
+          (shouldUseRedis(userId) ? await redis.get(newKey).catch(() => null) : null);
+        if (!alreadyMigrated) {
           const data = migrateWeekData(JSON.parse(raw));
           localStorage.setItem(newKey, JSON.stringify(data));
           if (shouldUseRedis(userId)) {
