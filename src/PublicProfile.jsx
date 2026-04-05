@@ -158,9 +158,13 @@ export default function PublicProfile() {
             const dis = isDayDisabled(week, i, disabled0);
             const score = dayScore(i);
             const perfect = !dis && score === params.length;
+            const colDate = new Date(dates.gridStart);
+            colDate.setDate(colDate.getDate() + week * 7 + i);
+            const dateLabel = colDate.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
             return (
               <div key={d} style={{ ...s.dayHeader, opacity: dis ? 0.25 : 1 }}>
                 <span style={{ ...s.dayName, color: perfect ? "#ff6b9d" : "#886677" }}>{d}</span>
+                <span style={s.dayDate}>{dateLabel}</span>
                 <span style={{
                   ...s.dayScore,
                   color: dis ? "#332228" : perfect ? "#ff6b9d" : score >= params.length - 2 ? "#ffb6d3" : "#553344",
