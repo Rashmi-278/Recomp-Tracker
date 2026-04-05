@@ -84,18 +84,20 @@ export default function PublicProfile() {
 
   const weeklyHits = (pid) => data.checks[pid]?.filter(Boolean).length || 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
-  const totalHits = params.reduce((sum, p) => sum + weeklyHits(p.id), 0);
-  const adherence = activeDays > 0 ? Math.min(100, Math.round((totalHits / (params.length * activeDays)) * 100)) : 0;
+  const maxHits = params.reduce((sum, p) => sum + Math.min(p.weeklyTarget, activeDays), 0);
+  const totalHits = params.reduce((sum, p) => sum + Math.min(weeklyHits(p.id), Math.min(p.weeklyTarget, activeDays)), 0);
+  const adherence = maxHits > 0 ? Math.min(100, Math.round((totalHits / maxHits) * 100)) : 0;
 
   // Overall adherence across all weeks loaded so far
   const overallAdherence = (() => {
     if (!allWeeksData.length) return 0;
     let hits = 0, possible = 0;
     allWeeksData.forEach((weekData, wk) => {
-      DAYS.forEach((_, dayIdx) => {
-        if (isDayDisabled(wk, dayIdx, disabled0)) return;
-        possible += params.length;
-        params.forEach(p => { if (weekData.checks[p.id]?.[dayIdx]) hits++; });
+      const wkActiveDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(wk, i, disabled0) ? 0 : 1), 0);
+      params.forEach(p => {
+        const target = Math.min(p.weeklyTarget, wkActiveDays);
+        possible += target;
+        hits += Math.min(weekData.checks[p.id]?.filter(Boolean).length || 0, target);
       });
     });
     return possible > 0 ? Math.min(100, Math.round((hits / possible) * 100)) : 0;

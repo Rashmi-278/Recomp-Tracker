@@ -998,8 +998,9 @@ export default function RecompTracker() {
   const weeklyHits = (pid) => data.checks[pid]?.filter(Boolean).length || 0;
   const disabled0 = dates ? dates.disabledDaysInWeek0 : 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
-  const totalHits = params.reduce((sum, p) => sum + weeklyHits(p.id), 0);
-  const adherence = activeDays > 0 ? Math.min(100, Math.round((totalHits / (params.length * activeDays)) * 100)) : 0;
+  const maxHits = params.reduce((sum, p) => sum + Math.min(p.weeklyTarget, activeDays), 0);
+  const totalHits = params.reduce((sum, p) => sum + Math.min(weeklyHits(p.id), Math.min(p.weeklyTarget, activeDays)), 0);
+  const adherence = maxHits > 0 ? Math.min(100, Math.round((totalHits / maxHits) * 100)) : 0;
   const dayScore = (i) => isDayDisabled(week, i, disabled0) ? -1 : params.reduce((sum, p) => sum + (data.checks[p.id]?.[i] ? 1 : 0), 0);
 
   const WEEK_LABELS = dates ? Array.from({ length: dates.totalWeeks }, (_, i) => `Week ${i + 1}`) : [];
