@@ -67,7 +67,7 @@ function getParams(profile) {
     { id: "protein", label: `${pro}g Protein`, icon: "\u{1F357}", subtext: "MyFitnessPal", weeklyTarget: 7 },
     { id: "water", label: "Water 3L+", icon: "\u{1F4A7}", subtext: "8-10 glasses", weeklyTarget: 7 },
     { id: "sleep", label: "7-8h Sleep", icon: "\u{1F319}", subtext: "Recovery + hormones", weeklyTarget: 7 },
-    { id: "strength", label: "Strength", icon: "\u{1F3CB}\uFE0F\u200D\u2640\uFE0F", subtext: "4x / week", weeklyTarget: 4 },
+    { id: "strength", label: "Strength", icon: "\u{1F3CB}\uFE0F\u200D\u2640\uFE0F", subtext: "3x / week", weeklyTarget: 3 },
     { id: "walk", label: "10K Walk", icon: "\u{1F6B6}\u200D\u2640\uFE0F", subtext: "3x / week", weeklyTarget: 3 },
     { id: "dance", label: bonusLabel, icon: bonusIcon, subtext: "Bonus goal", weeklyTarget: 7 },
   ];
@@ -1300,7 +1300,7 @@ export default function RecompTracker() {
             ["\u23F1\uFE0F", "16:8 IF daily"],
             ["\u{1F525}", `${profile.calorieDeficit || 500} cal deficit`],
             ["\u{1F357}", `${profile.proteinGoal || 120}g protein`],
-            ["\u{1F3CB}\uFE0F\u200D\u2640\uFE0F", "Strength 4x/wk"],
+            ["\u{1F3CB}\uFE0F\u200D\u2640\uFE0F", "Strength 3x/wk"],
             ["\u{1F6B6}\u200D\u2640\uFE0F", "10K walk 3x/wk"],
             ["\u{1F483}", profile.bonusGoal || "5 min Dance"],
           ].map(([icon, text], i) => (
