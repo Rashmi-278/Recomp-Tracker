@@ -13,6 +13,7 @@ export default function PublicProfile() {
   const [data, setData] = useState(initWeekData);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [allWeeksData, setAllWeeksData] = useState([]);
 
   // Lookup username → userId → profile
   useEffect(() => {
@@ -40,6 +41,19 @@ export default function PublicProfile() {
       setData(saved || initWeekData());
     });
   }, [week, userId, profile]);
+
+  // Load all weeks data for overall adherence and weekly bars
+  useEffect(() => {
+    if (!userId || !profile) return;
+    const d = computeDates(profile.startDate);
+    const now = new Date();
+    const currentWkIdx = now < d.gridStart ? 0 : Math.min(d.totalWeeks - 1, Math.floor((now - d.gridStart) / (1000 * 60 * 60 * 24 * 7)));
+    Promise.all(
+      Array.from({ length: currentWkIdx + 1 }, (_, wk) =>
+        Storage.load(wk, userId).then((saved) => saved || initWeekData())
+      )
+    ).then(setAllWeeksData);
+  }, [userId, profile]);
 
   if (loading) {
     return (
@@ -71,7 +85,21 @@ export default function PublicProfile() {
   const weeklyHits = (pid) => data.checks[pid]?.filter(Boolean).length || 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
   const totalHits = params.reduce((sum, p) => sum + weeklyHits(p.id), 0);
-  const adherence = activeDays > 0 ? Math.round((totalHits / (params.length * activeDays)) * 100) : 0;
+  const adherence = activeDays > 0 ? Math.min(100, Math.round((totalHits / (params.length * activeDays)) * 100)) : 0;
+
+  // Overall adherence across all weeks loaded so far
+  const overallAdherence = (() => {
+    if (!allWeeksData.length) return 0;
+    let hits = 0, possible = 0;
+    allWeeksData.forEach((weekData, wk) => {
+      DAYS.forEach((_, dayIdx) => {
+        if (isDayDisabled(wk, dayIdx, disabled0)) return;
+        possible += params.length;
+        params.forEach(p => { if (weekData.checks[p.id]?.[dayIdx]) hits++; });
+      });
+    });
+    return possible > 0 ? Math.min(100, Math.round((hits / possible) * 100)) : 0;
+  })();
   const dayScore = (i) => isDayDisabled(week, i, disabled0) ? -1 : params.reduce((sum, p) => sum + (data.checks[p.id]?.[i] ? 1 : 0), 0);
 
   const elapsed = getDaysElapsed(dates.protocolStart, dates.endDate, dates.totalDays);
@@ -131,14 +159,53 @@ export default function PublicProfile() {
               </defs>
               <circle cx="35" cy="35" r="28" fill="none" stroke="rgba(255,107,157,0.1)" strokeWidth="5" />
               <circle cx="35" cy="35" r="28" fill="none" stroke="url(#ringGrad)" strokeWidth="5"
-                strokeDasharray={`${(adherence / 100) * 175.9} 175.9`}
+                strokeDasharray={`${(overallAdherence / 100) * 175.9} 175.9`}
                 strokeLinecap="round" transform="rotate(-90 35 35)"
                 style={{ transition: "stroke-dasharray 0.5s ease" }}
               />
             </svg>
-            <span style={s.adherenceText}>{adherence}%</span>
+            <span style={s.adherenceText}>{overallAdherence}%</span>
           </div>
         </div>
+
+        {allWeeksData.length > 0 && (
+          <div style={{ margin: "12px 0 0", display: "flex", flexDirection: "column", gap: "6px" }}>
+            <div style={{ fontSize: "11px", fontWeight: 700, color: "#664455", letterSpacing: "1px", marginBottom: "2px" }}>
+              WEEKLY ADHERENCE
+            </div>
+            {allWeeksData.map((weekData, wk) => {
+              let hits = 0, possible = 0;
+              DAYS.forEach((_, dayIdx) => {
+                if (isDayDisabled(wk, dayIdx, disabled0)) return;
+                possible += params.length;
+                params.forEach(p => { if (weekData.checks[p.id]?.[dayIdx]) hits++; });
+              });
+              const pctWk = possible > 0 ? Math.min(100, Math.round((hits / possible) * 100)) : 0;
+              const isCurrentWk = wk === week;
+              return (
+                <div key={wk} style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}
+                  onClick={() => setWeek(wk)}>
+                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#ff6b9d" : "#553344", width: "42px", flexShrink: 0, fontWeight: isCurrentWk ? 700 : 400 }}>
+                    Wk {wk + 1}
+                  </span>
+                  <div style={{ flex: 1, height: "6px", background: "rgba(255,107,157,0.08)", borderRadius: "3px", overflow: "hidden" }}>
+                    <div style={{
+                      height: "100%", borderRadius: "3px",
+                      width: `${pctWk}%`,
+                      background: pctWk >= 75 ? "linear-gradient(90deg, #ff6b9d, #e84393)"
+                        : pctWk >= 40 ? "linear-gradient(90deg, #ffb6d3, #ff6b9d)"
+                        : "rgba(255,107,157,0.3)",
+                      transition: "width 0.5s ease",
+                    }} />
+                  </div>
+                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#ff6b9d" : "#664455", width: "32px", textAlign: "right", flexShrink: 0 }}>
+                    {pctWk}%
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         <div style={s.weekRow}>
           <button style={s.weekBtn} onClick={() => setWeek(Math.max(0, week - 1))}>‹</button>

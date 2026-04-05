@@ -549,7 +549,7 @@ const celebStyles = {
 };
 
 // ─── Progress Bar ───
-function ProgressBar({ dates }) {
+function ProgressBar({ dates, isAnon }) {
   const { protocolStart, endDate, totalDays, startLabel, endLabel } = dates;
   const elapsed = getDaysElapsed(protocolStart, endDate, totalDays);
   const pct = Math.min(100, Math.round((elapsed / totalDays) * 100));
@@ -565,8 +565,8 @@ function ProgressBar({ dates }) {
   return (
     <div style={s.progressWrap}>
       <div style={s.progressHeader}>
-        <span style={s.progressLabel}>DAY {elapsed} / {totalDays}</span>
-        <span style={s.progressMeta}>{weeksLeft}w left · {pct}%</span>
+        <span style={s.progressLabel}>{isAnon ? `${startLabel} → ${endLabel}` : `DAY ${elapsed} / ${totalDays}`}</span>
+        <span style={s.progressMeta}>{isAnon ? `${weeksLeft}w to go` : `${weeksLeft}w left · ${pct}%`}</span>
       </div>
       <div style={s.progressTrack}>
         <div style={{
@@ -964,7 +964,7 @@ export default function RecompTracker() {
   const disabled0 = dates ? dates.disabledDaysInWeek0 : 0;
   const activeDays = DAYS.reduce((sum, _, i) => sum + (isDayDisabled(week, i, disabled0) ? 0 : 1), 0);
   const totalHits = params.reduce((sum, p) => sum + weeklyHits(p.id), 0);
-  const adherence = activeDays > 0 ? Math.round((totalHits / (params.length * activeDays)) * 100) : 0;
+  const adherence = activeDays > 0 ? Math.min(100, Math.round((totalHits / (params.length * activeDays)) * 100)) : 0;
   const dayScore = (i) => isDayDisabled(week, i, disabled0) ? -1 : params.reduce((sum, p) => sum + (data.checks[p.id]?.[i] ? 1 : 0), 0);
 
   const WEEK_LABELS = dates ? Array.from({ length: dates.totalWeeks }, (_, i) => `Week ${i + 1}`) : [];
@@ -1014,7 +1014,7 @@ export default function RecompTracker() {
 
       {celebration && <CelebrationOverlay message={celebration} onClose={() => setCelebration(null)} />}
 
-      <ProgressBar dates={dates} />
+      <ProgressBar dates={dates} isAnon={isAnon} />
 
       {/* User bar — different for anonymous vs authenticated */}
       <div style={s.userBar}>
@@ -1098,6 +1098,11 @@ export default function RecompTracker() {
           <div>
             <h1 style={s.title}>RECOMP</h1>
             <p style={s.subtitle}>12-week recomp {"\u00B7"} {dates.startLabel} – {dates.endLabel}</p>
+            {isAnon && (
+              <p style={{ fontSize: "11px", color: "#664455", marginTop: "4px", letterSpacing: "0.5px" }}>
+                Sign in to set your own dates ↑
+              </p>
+            )}
           </div>
           <div style={s.adherenceRing}>
             <svg width="70" height="70" viewBox="0 0 70 70">
