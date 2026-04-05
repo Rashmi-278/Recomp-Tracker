@@ -100,7 +100,7 @@ const initWeekData = () => {
   const checks = {};
   PARAM_IDS.forEach((id) => { checks[id] = Array(7).fill(false); });
   const weekly = {};
-  WEEKLY_CHECKINS.forEach((w) => { weekly[w.id] = w.type === "rating" ? 3 : ""; });
+  WEEKLY_CHECKINS.forEach((w) => { weekly[w.id] = w.type === "rating" ? null : ""; });
   return { checks, weekly, notes: "" };
 };
 
@@ -425,6 +425,11 @@ const APP_CSS = `
   @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
   @keyframes slideBannerIn { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .rc-cell:hover:not(:disabled) { background: rgba(255,107,157,0.09) !important; border-color: rgba(255,107,157,0.35) !important; }
+  .rc-cell:active:not(:disabled) { transform: scale(0.92); }
+  .rc-rating:hover { background: rgba(255,107,157,0.1) !important; border-color: rgba(255,107,157,0.3) !important; color: #ffb6d3 !important; }
+  .rc-weekbtn:hover { background: rgba(255,107,157,0.14) !important; border-color: rgba(255,107,157,0.3) !important; }
+  @media (max-width: 480px) { .rc-weekly-grid { grid-template-columns: 1fr !important; } }
 `;
 
 // ─── Celebration overlay ───
@@ -681,7 +686,7 @@ function OnboardingForm({ onComplete, existingProfile, userId }) {
           value={username}
           onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ""))}
           style={s.onboardTextInput}
-          placeholder="rashmivabbigeri"
+          placeholder="aspiring_athlete"
           maxLength={30}
           required
         />
@@ -1099,7 +1104,7 @@ export default function RecompTracker() {
             <h1 style={s.title}>RECOMP</h1>
             <p style={s.subtitle}>12-week recomp {"\u00B7"} {dates.startLabel} – {dates.endLabel}</p>
             {isAnon && (
-              <p style={{ fontSize: "11px", color: "#664455", marginTop: "4px", letterSpacing: "0.5px" }}>
+              <p style={{ fontSize: "12px", color: "#886677", marginTop: "4px", letterSpacing: "0.5px" }}>
                 Sign in to set your own dates ↑
               </p>
             )}
@@ -1124,12 +1129,12 @@ export default function RecompTracker() {
         </div>
 
         <div style={s.weekRow}>
-          <button style={s.weekBtn} onClick={() => setWeek(Math.max(0, week - 1))}>{"\u2039"}</button>
+          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === 0 ? 0.3 : 1, pointerEvents: week === 0 ? "none" : "auto" }} onClick={() => setWeek(Math.max(0, week - 1))}>{"\u2039"}</button>
           <div style={{ textAlign: "center" }}>
             <span style={s.weekLabel}>{WEEK_LABELS[week]}</span>
             <div style={s.weekDates}>{getWeekDates(week, dates.gridStart)}</div>
           </div>
-          <button style={s.weekBtn} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>{"\u203A"}</button>
+          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === maxWeek ? 0.3 : 1, pointerEvents: week === maxWeek ? "none" : "auto" }} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>{"\u203A"}</button>
           {saving && <span style={s.saveIndicator}>saving…</span>}
         </div>
 
@@ -1189,6 +1194,7 @@ export default function RecompTracker() {
                   const checked = !dis && data.checks[param.id]?.[i];
                   return (
                     <button key={i}
+                      className="rc-cell"
                       disabled={dis}
                       style={{
                         ...s.cell,
@@ -1217,7 +1223,7 @@ export default function RecompTracker() {
         </div>
       ) : tab === "weekly" ? (
         <div style={s.content}>
-          <div style={s.weeklyGrid}>
+          <div className="rc-weekly-grid" style={s.weeklyGrid}>
             {WEEKLY_CHECKINS.map((item) => (
               <div key={item.id} style={s.weeklyCard}>
                 <div style={s.weeklyCardHeader}>
@@ -1234,6 +1240,7 @@ export default function RecompTracker() {
                   <div style={s.ratingRow}>
                     {[1, 2, 3, 4, 5].map((v) => (
                       <button key={v}
+                        className="rc-rating"
                         style={{ ...s.ratingBtn, ...(data.weekly[item.id] === v ? s.ratingBtnActive : {}) }}
                         onClick={() => updateWeekly(item.id, v)}
                       >{v}</button>
@@ -1360,7 +1367,7 @@ export const s = {
     alignItems: "center", gap: "2px",
   },
   dayName: { fontSize: "13px", fontWeight: 700, letterSpacing: "1px" },
-  dayDate: { fontSize: "10px", fontWeight: 500, color: "#553344", letterSpacing: "0px" },
+  dayDate: { fontSize: "11px", fontWeight: 500, color: "#664455", letterSpacing: "0px" },
   dayScore: { fontSize: "11px", fontWeight: 600 },
   weeklyColHeader: { fontSize: "13px", fontWeight: 700, color: "#886677", textAlign: "center" },
   row: {

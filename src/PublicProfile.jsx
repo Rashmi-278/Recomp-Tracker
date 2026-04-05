@@ -208,12 +208,12 @@ export default function PublicProfile() {
         )}
 
         <div style={s.weekRow}>
-          <button style={s.weekBtn} onClick={() => setWeek(Math.max(0, week - 1))}>‹</button>
+          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === 0 ? 0.3 : 1, pointerEvents: week === 0 ? "none" : "auto" }} onClick={() => setWeek(Math.max(0, week - 1))}>‹</button>
           <div style={{ textAlign: "center" }}>
             <span style={s.weekLabel}>{WEEK_LABELS[week]}</span>
             <div style={s.weekDates}>{getWeekDates(week, dates.gridStart)}</div>
           </div>
-          <button style={s.weekBtn} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>›</button>
+          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === maxWeek ? 0.3 : 1, pointerEvents: week === maxWeek ? "none" : "auto" }} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>›</button>
         </div>
       </div>
 
