@@ -202,7 +202,7 @@ function detectPlateau(progression) {
 function ExerciseChart({ name, progression }) {
   if (!progression || progression.length < 2) return null;
 
-  const W = 320, H = 120, PAD = { top: 12, right: 16, bottom: 28, left: 36 };
+  const W = 280, H = 72, PAD = { top: 8, right: 10, bottom: 20, left: 28 };
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
 
@@ -218,18 +218,18 @@ function ExerciseChart({ name, progression }) {
 
   const points = progression.map((p, i) => `${toX(i)},${toY(p.top_weight_kg || 0)}`).join(" ");
 
-  // Grid lines (3)
-  const gridLines = [0, 0.5, 1].map((t) => {
+  // Grid lines — just min and max
+  const gridLines = [0, 1].map((t) => {
     const y = PAD.top + innerH * (1 - t);
     const val = minV + range * t;
-    return { y, label: val % 1 === 0 ? val : val.toFixed(1) };
+    return { y, label: val % 1 === 0 ? `${val}` : val.toFixed(1) };
   });
 
-  // X axis labels (max 5)
-  const step = Math.max(1, Math.floor(progression.length / 5));
-  const xLabels = progression
-    .map((p, i) => ({ i, label: p.date.slice(5).replace("-", "/") }))
-    .filter((_, i) => i % step === 0 || i === progression.length - 1);
+  // X axis labels — first and last only
+  const xLabels = [
+    { i: 0, label: progression[0].date.slice(5).replace("-", "/") },
+    { i: progression.length - 1, label: progression[progression.length - 1].date.slice(5).replace("-", "/") },
+  ];
 
   const delta = values[values.length - 1] - values[0];
   const deltaStr = delta > 0 ? `+${delta}kg` : delta < 0 ? `${delta}kg` : "—";
@@ -239,52 +239,53 @@ function ExerciseChart({ name, progression }) {
     <div style={{
       background: "rgba(255,107,157,0.02)",
       border: "1px solid rgba(255,107,157,0.08)",
-      borderRadius: "14px",
-      padding: "16px 12px 12px",
-      marginBottom: "12px",
+      borderRadius: "12px",
+      padding: "10px 12px 8px",
+      marginBottom: "8px",
     }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-        <span style={{ fontSize: "13px", fontWeight: 600, color: "#ff85b3" }}>{name}</span>
-        <span style={{ fontSize: "11px", fontWeight: 600, color: deltaColor }}>{deltaStr} total</span>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+        <span style={{ fontSize: "12px", fontWeight: 600, color: "#ff85b3" }}>{name}</span>
+        <span style={{ fontSize: "11px", fontWeight: 600, color: deltaColor }}>{deltaStr}</span>
       </div>
 
-      <svg width="100%" viewBox={`0 0 ${W} ${H}`} style={{ display: "block", overflow: "visible" }}>
+      <svg width="100%" viewBox={`0 0 ${W} ${H}`} style={{ display: "block", height: "72px" }}>
         {/* Grid lines */}
         {gridLines.map(({ y, label }) => (
           <g key={y}>
             <line x1={PAD.left} y1={y} x2={W - PAD.right} y2={y}
-              stroke="rgba(255,107,157,0.05)" strokeWidth="1" />
-            <text x={PAD.left - 4} y={y + 4} fontSize="9" fill="#553344" textAnchor="end">{label}</text>
+              stroke="rgba(255,107,157,0.06)" strokeWidth="1" />
+            <text x={PAD.left - 4} y={y + 3} fontSize="8" fill="#553344" textAnchor="end">{label}</text>
           </g>
         ))}
 
         {/* Polyline */}
         <polyline points={points} fill="none"
-          stroke="rgba(255,107,157,0.5)" strokeWidth="2" strokeLinejoin="round" />
+          stroke="rgba(255,107,157,0.5)" strokeWidth="1.5" strokeLinejoin="round" />
 
         {/* Dots */}
         {progression.map((p, i) => (
           <circle key={i} cx={toX(i)} cy={toY(p.top_weight_kg || 0)}
-            r="4" fill="#ff6b9d" />
+            r="3" fill="#ff6b9d" />
         ))}
 
-        {/* X labels */}
+        {/* X labels — first and last */}
         {xLabels.map(({ i, label }) => (
-          <text key={i} x={toX(i)} y={H - 4} fontSize="9" fill="#553344" textAnchor="middle">{label}</text>
+          <text key={i} x={toX(i)} y={H - 3} fontSize="8" fill="#553344"
+            textAnchor={i === 0 ? "start" : "end"}>{label}</text>
         ))}
       </svg>
 
       {plateau && (
         <div style={{
-          background: "rgba(255,200,50,0.08)",
-          border: "1px solid rgba(255,200,50,0.2)",
-          borderRadius: "8px",
-          padding: "8px 12px",
-          fontSize: "12px",
+          background: "rgba(255,200,50,0.06)",
+          border: "1px solid rgba(255,200,50,0.15)",
+          borderRadius: "6px",
+          padding: "5px 10px",
+          fontSize: "11px",
           color: "#d4a800",
-          marginTop: "8px",
+          marginTop: "6px",
         }}>
-          {`⚡ Plateau: held ${plateau.weight}kg for ${plateau.sessions} sessions → Try: +2.5kg`}
+          {`⚡ Plateau: ${plateau.weight}kg × ${plateau.sessions} sessions — try +2.5kg`}
         </div>
       )}
     </div>
@@ -578,10 +579,10 @@ plank hold 3x45s`;
 
       {/* Progression charts */}
       {exercisesWithProg.length > 0 && (
-        <div style={{ marginTop: "28px" }}>
+        <div style={{ marginTop: "20px" }}>
           <div style={{
-            fontSize: "12px", fontWeight: 700, letterSpacing: "3px",
-            color: "#664455", textTransform: "uppercase", marginBottom: "12px",
+            fontSize: "11px", fontWeight: 700, letterSpacing: "3px",
+            color: "#553344", textTransform: "uppercase", marginBottom: "8px",
           }}>
             Progression
           </div>
