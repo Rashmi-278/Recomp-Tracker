@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { usePrivy } from "@privy-io/react-auth";
+import LiftTracker from "./LiftTracker";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -408,6 +409,29 @@ export const Storage = {
       localStorage.removeItem(key);
       if (useRedis) {
         try { await redis.del(key); } catch {}
+      }
+    }
+  },
+  async loadLifts(userId) {
+    const key = `recomp-${userId}-lifts-all`;
+    if (shouldUseRedis(userId)) {
+      const raw = await redis.get(key);
+      if (raw) return typeof raw === "string" ? JSON.parse(raw) : raw;
+    }
+    const local = localStorage.getItem(key);
+    return local ? JSON.parse(local) : null;
+  },
+  async saveLifts(userId, data) {
+    const key = `recomp-${userId}-lifts-all`;
+    const value = JSON.stringify(data);
+    let localSaved = false;
+    try { localStorage.setItem(key, value); localSaved = true; } catch {}
+    if (shouldUseRedis(userId)) {
+      try {
+        await redis.set(key, value);
+      } catch {
+        if (localSaved) { const e = new Error("Local only"); e.localOnly = true; throw e; }
+        throw new Error("Save failed");
       }
     }
   },
@@ -1139,9 +1163,9 @@ export default function RecompTracker() {
         </div>
 
         <div style={s.tabs}>
-          {["daily", "weekly", "notes"].map((t) => (
+          {["daily", "weekly", "lifts", "notes"].map((t) => (
             <button key={t} style={{ ...s.tab, ...(tab === t ? s.tabActive : {}) }} onClick={() => setTab(t)}>
-              {t === "daily" ? "\u2726 Daily" : t === "weekly" ? "\u2726 Weekly" : "\u2726 Notes"}
+              {t === "daily" ? "\u2726 Daily" : t === "weekly" ? "\u2726 Weekly" : t === "lifts" ? "\u2726 Lifts" : "\u2726 Notes"}
             </button>
           ))}
         </div>
@@ -1251,6 +1275,8 @@ export default function RecompTracker() {
             ))}
           </div>
         </div>
+      ) : tab === "lifts" ? (
+        <LiftTracker userId={userId} Storage={Storage} />
       ) : (
         <div style={s.content}>
           <textarea style={s.notesArea} value={data.notes}
