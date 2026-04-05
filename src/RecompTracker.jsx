@@ -1363,11 +1363,11 @@ export const s = {
     transition: "all 0.2s ease", fontFamily: "inherit", padding: 0,
   },
   cellActive: {
-    background: "rgba(255,107,157,0.12)", borderColor: "rgba(255,107,157,0.4)",
+    background: "rgba(255,107,157,0.12)", border: "1px solid rgba(255,107,157,0.4)",
     boxShadow: "0 0 12px rgba(255,107,157,0.15)", color: "#ff6b9d",
   },
   cellDisabled: {
-    background: "rgba(255,107,157,0.01)", borderColor: "rgba(255,107,157,0.04)",
+    background: "rgba(255,107,157,0.01)", border: "1px solid rgba(255,107,157,0.04)",
     cursor: "not-allowed", opacity: 0.2,
   },
   weeklyCount: { fontSize: "13px", fontWeight: 700, textAlign: "center" },
@@ -1395,7 +1395,7 @@ export const s = {
     cursor: "pointer", fontFamily: "inherit", transition: "all 0.15s",
   },
   ratingBtnActive: {
-    background: "rgba(255,107,157,0.15)", borderColor: "rgba(255,107,157,0.4)", color: "#ff6b9d",
+    background: "rgba(255,107,157,0.15)", border: "1px solid rgba(255,107,157,0.4)", color: "#ff6b9d",
   },
   notesArea: {
     width: "100%", minHeight: "300px",
