@@ -182,6 +182,9 @@ plank hold 3x45s
 
 **"Log it" button:** Same as primary CTA but smaller — `padding: 10px 28px, fontSize: 14px`.
 
+**Session accumulation — Keep Notes style:**
+Each "Log it" MERGES new exercises into today's existing session (append, not replace). The user logs one exercise at a time after completing it. Textarea starts empty each time. Today's growing session is shown in the history list after every save. If the same exercise is logged twice in one day, new sets are APPENDED. This is the core UX contract for the Lifts tab.
+
 ### Parse Logic (client-side, no LLM required)
 
 The parser handles these formats:

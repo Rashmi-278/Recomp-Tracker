@@ -1,0 +1,3638 @@
+{
+  "generated": "2026-04-06",
+  "sessions": [
+    {
+      "date": "2026-01-30",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 5.0,
+          "total_volume": 270.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12 / 12",
+              "notes": "L/R reps"
+            },
+            {
+              "set": 2,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12 / 12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12 / 12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 5.0,
+              "reps": 18.0,
+              "volume_raw": "18 / 20",
+              "notes": "Steps L/R"
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 12.5,
+          "total_volume": 0.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 20.0,
+              "volume_raw": "20 steps",
+              "notes": "Bidirectional"
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 20.0,
+              "volume_raw": "20 steps",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 20.0,
+              "volume_raw": "20 steps",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 12.5,
+              "reps": 20.0,
+              "volume_raw": "20 steps",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 5.0,
+          "total_volume": 255.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 5.0,
+              "reps": 15.0,
+              "volume_raw": "15",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 22.5,
+          "total_volume": 870.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 22.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 22.5,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 2.0,
+              "volume_raw": "2:25 min",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-02",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 185.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "Warm-up L/R"
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 8.0,
+              "volume_raw": "8 / 10",
+              "notes": "L/R"
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 22.5,
+          "total_volume": 750.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 22.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 22.5,
+              "reps": 8.0,
+              "volume_raw": "8",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 22.68,
+          "total_volume": 907.2,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 18.14,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "40 lb \u2192 18.1 kg"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.68,
+              "reps": 20.0,
+              "volume_raw": "20",
+              "notes": "50 lb \u2192 22.7 kg"
+            },
+            {
+              "set": 3,
+              "weight_kg": 22.68,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 7.5,
+          "total_volume": 390.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 20.0,
+              "volume_raw": "20",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 20.0,
+              "volume_raw": "20",
+              "notes": null
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 17.5,
+          "total_volume": 0.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 1.0,
+              "volume_raw": "1 lap",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 12.5,
+              "reps": 1.0,
+              "volume_raw": "1 lap",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 1.0,
+              "volume_raw": "1 lap",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 17.5,
+              "reps": 1.0,
+              "volume_raw": "1 lap",
+              "notes": null
+            }
+          ]
+        },
+        "Row": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 5.0,
+              "volume_raw": "5:30 min",
+              "notes": "100 count"
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 42.0,
+              "volume_raw": "42 sec",
+              "notes": "Can do more"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-06",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 271.2,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 8.0,
+              "volume_raw": "8 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 11.5,
+              "volume_raw": "11.5 / 12",
+              "notes": "L/R"
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 15.0,
+          "total_volume": 610.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Deep form"
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 420.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 14.5,
+              "volume_raw": "14.5",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 27.22,
+          "total_volume": 789.3,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "50 lb warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 27.22,
+              "reps": 4.0,
+              "volume_raw": "4",
+              "notes": "60 lb"
+            },
+            {
+              "set": 4,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 15.0,
+          "total_volume": 0.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 40.0,
+              "volume_raw": "40 steps",
+              "notes": null
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            }
+          ]
+        },
+        "Rope": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-10",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 17.5,
+          "total_volume": 760.0,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 17.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 17.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 17.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 17.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 8.0,
+              "volume_raw": "8L / 10R",
+              "notes": "Alt set"
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 17.5,
+          "total_volume": 0.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 17.5,
+              "reps": 20.0,
+              "volume_raw": "~20 steps",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 17.5,
+              "reps": 20.0,
+              "volume_raw": "~20 steps",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 17.5,
+              "reps": 20.0,
+              "volume_raw": "~20 steps",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 400.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 22.68,
+          "total_volume": 907.2,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 18.14,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "40 lb"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "50 lb"
+            },
+            {
+              "set": 3,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 22.68,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            }
+          ]
+        },
+        "Row": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 5.0,
+              "volume_raw": "5:00 min",
+              "notes": "~20 kcal, strength"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-14",
+      "exercises": {
+        "Goblet Squat": {
+          "top_weight_kg": 20.0,
+          "total_volume": 350.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+20 kg bar"
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+20 kg bar"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-15",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 317.5,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 3.0,
+              "volume_raw": "3 / 3",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10R / 4L",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7L / 10R",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 10.0,
+              "reps": 6.0,
+              "volume_raw": "6 / 6",
+              "notes": "L/R"
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 22.68,
+          "total_volume": 226.8,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10+",
+              "notes": "50 lb"
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 22.5,
+          "total_volume": 0.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 22.5,
+              "reps": null,
+              "volume_raw": "max steps",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 22.5,
+          "total_volume": 700.0,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Deep warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Deep"
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Deep"
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Deep"
+            },
+            {
+              "set": 5,
+              "weight_kg": 22.5,
+              "reps": null,
+              "volume_raw": "max",
+              "notes": null
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            }
+          ]
+        },
+        "Row": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-17",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 220.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 4.5,
+              "volume_raw": "4.5",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5R / 4.5L",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 22.68,
+          "total_volume": 975.2,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 18.14,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "40 lb, proper form"
+            },
+            {
+              "set": 2,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "50 lb"
+            },
+            {
+              "set": 3,
+              "weight_kg": 22.68,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 22.68,
+              "reps": 15.0,
+              "volume_raw": "15",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 15.0,
+          "total_volume": 550.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+bar, proper form"
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+bar, 0.8/1 depth"
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 7.5,
+          "total_volume": 275.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 15.0,
+          "total_volume": 0.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 30.0,
+              "volume_raw": "30 steps \u00d7 4 laps",
+              "notes": null
+            }
+          ]
+        },
+        "Row": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 5.0,
+              "volume_raw": "5:30 min",
+              "notes": "150 count"
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 2.0,
+              "volume_raw": "2:00 min",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-20",
+      "exercises": {
+        "Goblet Squat": {
+          "top_weight_kg": 15.0,
+          "total_volume": 355.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+bar warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "+bar"
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 7.0,
+              "volume_raw": "7",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "incomplete",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 282.5,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 3.0,
+              "volume_raw": "3 / 3",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7 / 7",
+              "notes": "L/R"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-23",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 300.0,
+          "num_sets": 6,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5 / 5",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 2.0,
+              "volume_raw": "2 / 2",
+              "notes": "L/R"
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 7.0,
+              "volume_raw": "7 / 7",
+              "notes": "L/R"
+            },
+            {
+              "set": 5,
+              "weight_kg": 10.0,
+              "reps": 1.0,
+              "volume_raw": "1 / 1",
+              "notes": "L/R"
+            },
+            {
+              "set": 6,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 505.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 22.0,
+              "volume_raw": "22",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 20.0,
+          "total_volume": 790.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 20.0,
+          "total_volume": 0.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10 steps",
+              "notes": "+equip"
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10 steps",
+              "notes": "+equip"
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10 steps",
+              "notes": "+equip"
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "10 steps",
+              "notes": "+equip"
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 24.95,
+          "total_volume": 861.9,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.88,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "35 lb warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.41,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "45 lb warm-up"
+            },
+            {
+              "set": 3,
+              "weight_kg": 24.95,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "55 lb"
+            },
+            {
+              "set": 4,
+              "weight_kg": 24.95,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 24.95,
+              "reps": null,
+              "volume_raw": "AMRAP",
+              "notes": null
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 2.0,
+              "volume_raw": "2:00 min",
+              "notes": null
+            }
+          ]
+        },
+        "Row": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 5.0,
+              "volume_raw": "5:00 min",
+              "notes": null
+            }
+          ]
+        },
+        "Vertical Jump": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 16.0,
+              "volume_raw": "16 cm",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-02-25",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 225.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "10 / 10",
+              "notes": "L/R"
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5 / 5",
+              "notes": "L/R"
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5 / 5",
+              "notes": "L/R"
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 5.0,
+              "volume_raw": "5 / 5",
+              "notes": "L/R"
+            }
+          ]
+        },
+        "Deadlift": {
+          "top_weight_kg": 15.0,
+          "total_volume": 145.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 5.0,
+              "volume_raw": "5\u20138",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 5.0,
+              "volume_raw": "5",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 3.0,
+              "volume_raw": "3",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 12.0,
+          "total_volume": 100.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 12.0,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 12.0,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 12.0,
+              "reps": null,
+              "volume_raw": "-",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 15.0,
+          "total_volume": 580.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "Warm-up"
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 15.0,
+              "reps": 12.0,
+              "volume_raw": "12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Farmers Walk": {
+          "top_weight_kg": 17.5,
+          "total_volume": 0.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": 40.0,
+              "volume_raw": "40 steps",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 17.5,
+              "reps": 40.0,
+              "volume_raw": "40 steps",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 17.5,
+              "reps": 40.0,
+              "volume_raw": "40 steps",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 17.5,
+              "reps": 40.0,
+              "volume_raw": "40 steps",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 24.95,
+          "total_volume": 952.6,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 20.41,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "45 lb"
+            },
+            {
+              "set": 2,
+              "weight_kg": 24.95,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": "55 lb"
+            },
+            {
+              "set": 3,
+              "weight_kg": 24.95,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 24.95,
+              "reps": 10.0,
+              "volume_raw": "10",
+              "notes": null
+            }
+          ]
+        },
+        "Plank": {
+          "top_weight_kg": null,
+          "total_volume": 0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": null,
+              "reps": 2.0,
+              "volume_raw": "2:00 min",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "exercises": {
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 350.0,
+          "num_sets": 6,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg x 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 3.0,
+              "volume_raw": "10kg 3L 5E",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 4.0,
+              "volume_raw": "7.5kg 4,4",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7.5kg 7",
+              "notes": null
+            },
+            {
+              "set": 6,
+              "weight_kg": 7.5,
+              "reps": 15.0,
+              "volume_raw": "7.5 15",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-14",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1900.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 20.0,
+              "reps": null,
+              "volume_raw": "20KG warm up 20 steps",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20 steps 18steps back",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 4,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps 10steps pause 8steps back",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 187.5,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": null,
+              "volume_raw": "5kg warm up",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 6.0,
+              "volume_raw": "7.5kg 6",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 9.0,
+              "volume_raw": "7.5kg 9",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 5.0,
+          "total_volume": 170.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "5kg 12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "5kg 12",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 690.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 16.0,
+              "reps": 10.0,
+              "volume_raw": "16kg 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 6.5,
+              "volume_raw": "20KG 6.5",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 15.0,
+          "total_volume": 250.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg squat 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 15.0,
+              "reps": 10.0,
+              "volume_raw": "15kg 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": null,
+              "volume_raw": "10kg deep squat",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": null,
+              "volume_raw": "10kg deep squat",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-16",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1740.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.0,
+              "reps": null,
+              "volume_raw": "12kg warm up 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 4,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps front and 16steps back",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 282.5,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 11.0,
+              "volume_raw": "7.5kg 11",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 320.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg disc 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg disc 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg disc 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 7.0,
+              "volume_raw": "10kg disc 7",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 10.0,
+          "total_volume": 90.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 6.0,
+              "volume_raw": "10kg warm up 6",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 3,
+              "volume_raw": "10 kg * 10 * 3 sets",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 870.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 16.0,
+              "reps": 10.0,
+              "volume_raw": "16kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 15.5,
+              "volume_raw": "20KG 15.5",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-18",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1250.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.5,
+              "reps": null,
+              "volume_raw": "12.5kg 20 steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps front 8steps 12steps back",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps front 8, 6,6 steps back",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 235.0,
+          "num_sets": 6,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 3.0,
+              "volume_raw": "10kg 3",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 0.5,
+              "volume_raw": "10kg 0.5",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 5.0,
+              "volume_raw": "7.5kg 5",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 6.0,
+              "volume_raw": "7.5kg 6",
+              "notes": null
+            },
+            {
+              "set": 6,
+              "weight_kg": 7.5,
+              "reps": 9.0,
+              "volume_raw": "7.5kg 9",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 100.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg 10",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 500.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": null,
+              "volume_raw": "20kg",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 5.0,
+          "total_volume": 0.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": null,
+              "volume_raw": "5kg warm up",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-21",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1800.0,
+          "num_sets": 9,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg warm up 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 4,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 5,
+              "weight_kg": 5.0,
+              "reps": null,
+              "volume_raw": "5kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 6,
+              "weight_kg": 7.5,
+              "reps": null,
+              "volume_raw": "7.5kg 12",
+              "notes": null
+            },
+            {
+              "set": 7,
+              "weight_kg": 7.5,
+              "reps": null,
+              "volume_raw": "7.5kg 9",
+              "notes": null
+            },
+            {
+              "set": 8,
+              "weight_kg": 7.5,
+              "reps": null,
+              "volume_raw": "7.5kg 4",
+              "notes": null
+            },
+            {
+              "set": 9,
+              "weight_kg": 7.5,
+              "reps": null,
+              "volume_raw": "7.5kg 3",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 310.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 12.0,
+              "volume_raw": "10kg 12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 4.0,
+              "volume_raw": "10kg 4",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 10.0,
+          "total_volume": 117.5,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 10.0,
+              "reps": 8.0,
+              "volume_raw": "10kg x 8",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 2.5,
+              "reps": 5.0,
+              "volume_raw": "2.5kg 5",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 2.5,
+              "reps": 5.0,
+              "volume_raw": "2.5kg 5",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 2.5,
+              "reps": 5.0,
+              "volume_raw": "2.5kg 5",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 720.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.0,
+              "reps": null,
+              "volume_raw": "12kg warm up",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 12.0,
+              "volume_raw": "20KG 12",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 12.0,
+              "volume_raw": "20KG 12",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 12.0,
+              "volume_raw": "20KG 12",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-23",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1300.0,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg warm up 20 steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 810.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.0,
+              "reps": 10.0,
+              "volume_raw": "12kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 14.5,
+              "volume_raw": "20KG 14.5",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 10.0,
+          "total_volume": 310.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg warm up 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": 10.0,
+              "volume_raw": "10kg 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 10.0,
+              "reps": 8.0,
+              "volume_raw": "10kg 8",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 10.0,
+              "reps": 8.0,
+              "volume_raw": "10kg 8",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 200.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 8.0,
+              "volume_raw": "7.5kg 8",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 4.0,
+              "volume_raw": "7.5kg 4",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 8.0,
+              "volume_raw": "7.5kg 8",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 2.5,
+          "total_volume": 7.5,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 2.5,
+              "reps": 3,
+              "volume_raw": "Barbell 2.5kg deep 5 x 3",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1800.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg 20steps summary",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20 steps 5 steps 15steps",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 4,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 20.0,
+          "total_volume": 240.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "Handle bar (20kg) 10 deeps squats",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 2.5,
+              "reps": 2.0,
+              "volume_raw": "Handle bar + 2.5kg 10deeps squats",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 2.5,
+              "reps": 2.0,
+              "volume_raw": "Handle bar 2.5kg 8 deep but last 2 form corrected but not deep",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 2.5,
+              "reps": 12.0,
+              "volume_raw": "Handle bar 2.5kg 12",
+              "notes": null
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 744.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.0,
+              "reps": 12.0,
+              "volume_raw": "12kg warm up 12",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 5.0,
+          "total_volume": 50.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10,
+              "volume_raw": "5kg form right x 4 x10",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 102.5,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 10.0,
+              "volume_raw": "5kg 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7.5kg 7",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-28",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 25.0,
+          "total_volume": 800.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg warm up lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg lap felt difficult",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 20.0,
+          "total_volume": 432.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 16.0,
+              "reps": 12.0,
+              "volume_raw": "16kg 12",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 20.0,
+              "reps": 12.0,
+              "volume_raw": "20KG 12",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 5.0,
+          "total_volume": 10.0,
+          "num_sets": 1,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 2,
+              "volume_raw": "5kg x 12 x 2",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 202.5,
+          "num_sets": 3,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 7.5,
+              "reps": 12.0,
+              "volume_raw": "7.5kg 12",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 5.0,
+              "volume_raw": "7.5kg 5",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-03-30",
+      "exercises": {
+        "Lat Pull-down": {
+          "top_weight_kg": 25.0,
+          "total_volume": 1007.5,
+          "num_sets": 6,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 12.0,
+              "reps": 10.0,
+              "volume_raw": "12kg x 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": 4.5,
+              "volume_raw": "25kg 4.5",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": 3.0,
+              "volume_raw": "25kg 3",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 20.0,
+              "reps": 14.0,
+              "volume_raw": "20KG 14",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 20.0,
+              "reps": 10.0,
+              "volume_raw": "20KG 10",
+              "notes": null
+            },
+            {
+              "set": 6,
+              "weight_kg": 20.0,
+              "reps": 11.0,
+              "volume_raw": "20KG  11",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 345.0,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 15.0,
+              "volume_raw": "5kg x 15",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg x 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 4.0,
+              "volume_raw": "7.5kg 4",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 12.0,
+              "volume_raw": "7.5kg 12",
+              "notes": null
+            }
+          ]
+        },
+        "Butt Hinge": {
+          "top_weight_kg": 2.5,
+          "total_volume": 50.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 2.5,
+              "reps": 10.0,
+              "volume_raw": "2.5kg x 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 2.5,
+              "reps": 10,
+              "volume_raw": "2.5 x 10",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-02",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 30.0,
+          "total_volume": 300.0,
+          "num_sets": 11,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg 20steps still",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 30.0,
+              "reps": null,
+              "volume_raw": "30kg fail couldn\u2019t lift",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 30sec hold",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 20sec hold",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 20 sec hold",
+              "notes": null
+            },
+            {
+              "set": 6,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 18sec hold",
+              "notes": null
+            },
+            {
+              "set": 7,
+              "weight_kg": 20.0,
+              "reps": null,
+              "volume_raw": "Lat pull up increased weight even if my comfort is 20kg",
+              "notes": null
+            },
+            {
+              "set": 8,
+              "weight_kg": 16.0,
+              "reps": null,
+              "volume_raw": "16kg warm up 12",
+              "notes": null
+            },
+            {
+              "set": 9,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 6",
+              "notes": null
+            },
+            {
+              "set": 10,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 6.5",
+              "notes": null
+            },
+            {
+              "set": 11,
+              "weight_kg": 25.0,
+              "reps": null,
+              "volume_raw": "25kg 6.5",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 7.5,
+          "total_volume": 217.5,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": null,
+              "volume_raw": "5kg warm up",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 6.0,
+              "volume_raw": "7.5kg 6",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 6.0,
+              "volume_raw": "7.5kg 6",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7.5kg",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-04-04",
+      "exercises": {
+        "Farmers Walk": {
+          "top_weight_kg": 27.5,
+          "total_volume": 1950.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 15.0,
+              "reps": null,
+              "volume_raw": "15kg 20 steps lap warm up",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 2,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 3,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 20steps lap",
+              "notes": null,
+              "steps": 20
+            },
+            {
+              "set": 4,
+              "weight_kg": 27.5,
+              "reps": null,
+              "volume_raw": "27.5kg 20steps lap last lap felt good like it felt light  and managed",
+              "notes": null,
+              "steps": 20
+            }
+          ]
+        },
+        "Lat Pull-down": {
+          "top_weight_kg": 25.0,
+          "total_volume": 610.0,
+          "num_sets": 4,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 16.0,
+              "reps": 10.0,
+              "volume_raw": "16kg 10",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 25.0,
+              "reps": 7.0,
+              "volume_raw": "25kg 7",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 25.0,
+              "reps": 6.5,
+              "volume_raw": "25kg 6.5",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 25.0,
+              "reps": 4.5,
+              "volume_raw": "25kg 4.5",
+              "notes": null
+            }
+          ]
+        },
+        "Shoulder Press": {
+          "top_weight_kg": 10.0,
+          "total_volume": 262.5,
+          "num_sets": 5,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 5.0,
+              "reps": 12.0,
+              "volume_raw": "5kg 12 warm up",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 10.0,
+              "reps": null,
+              "volume_raw": "10kg fail couldn\u2019t lift",
+              "notes": null
+            },
+            {
+              "set": 3,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 4,
+              "weight_kg": 7.5,
+              "reps": 10.0,
+              "volume_raw": "7.5kg 10",
+              "notes": null
+            },
+            {
+              "set": 5,
+              "weight_kg": 7.5,
+              "reps": 7.0,
+              "volume_raw": "7.5kg",
+              "notes": null
+            }
+          ]
+        },
+        "Goblet Squat": {
+          "top_weight_kg": 5.0,
+          "total_volume": 45.0,
+          "num_sets": 2,
+          "sets": [
+            {
+              "set": 1,
+              "weight_kg": 2.5,
+              "reps": 2.0,
+              "volume_raw": "2.5kg on smith bar",
+              "notes": null
+            },
+            {
+              "set": 2,
+              "weight_kg": 5.0,
+              "reps": 8.0,
+              "volume_raw": "5kg x 8 back pain",
+              "notes": null
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "progression": {
+    "Shoulder Press": [
+      {
+        "date": "2026-01-30",
+        "top_weight_kg": 5.0,
+        "total_volume": 270.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-02",
+        "top_weight_kg": 7.5,
+        "total_volume": 185.0,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-02-06",
+        "top_weight_kg": 7.5,
+        "total_volume": 271.2,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-10",
+        "top_weight_kg": 17.5,
+        "total_volume": 760.0,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-02-15",
+        "top_weight_kg": 10.0,
+        "total_volume": 317.5,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-02-17",
+        "top_weight_kg": 10.0,
+        "total_volume": 220.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-20",
+        "top_weight_kg": 10.0,
+        "total_volume": 282.5,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-02-23",
+        "top_weight_kg": 10.0,
+        "total_volume": 300.0,
+        "num_sets": 6
+      },
+      {
+        "date": "2026-02-25",
+        "top_weight_kg": 10.0,
+        "total_volume": 225.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-05",
+        "top_weight_kg": 10.0,
+        "total_volume": 350.0,
+        "num_sets": 6
+      },
+      {
+        "date": "2026-03-14",
+        "top_weight_kg": 7.5,
+        "total_volume": 187.5,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-16",
+        "top_weight_kg": 7.5,
+        "total_volume": 282.5,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-18",
+        "top_weight_kg": 10.0,
+        "total_volume": 235.0,
+        "num_sets": 6
+      },
+      {
+        "date": "2026-03-23",
+        "top_weight_kg": 7.5,
+        "total_volume": 200.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-26",
+        "top_weight_kg": 7.5,
+        "total_volume": 102.5,
+        "num_sets": 2
+      },
+      {
+        "date": "2026-03-28",
+        "top_weight_kg": 7.5,
+        "total_volume": 202.5,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-03-30",
+        "top_weight_kg": 7.5,
+        "total_volume": 345.0,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-04-02",
+        "top_weight_kg": 7.5,
+        "total_volume": 217.5,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-04-04",
+        "top_weight_kg": 10.0,
+        "total_volume": 262.5,
+        "num_sets": 5
+      }
+    ],
+    "Farmers Walk": [
+      {
+        "date": "2026-01-30",
+        "top_weight_kg": 12.5,
+        "total_volume": 0.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-02",
+        "top_weight_kg": 17.5,
+        "total_volume": 0.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-06",
+        "top_weight_kg": 15.0,
+        "total_volume": 0.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-02-10",
+        "top_weight_kg": 17.5,
+        "total_volume": 0.0,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-02-15",
+        "top_weight_kg": 22.5,
+        "total_volume": 0.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-02-17",
+        "top_weight_kg": 15.0,
+        "total_volume": 0.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-02-23",
+        "top_weight_kg": 20.0,
+        "total_volume": 0.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-25",
+        "top_weight_kg": 17.5,
+        "total_volume": 0.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-14",
+        "top_weight_kg": 25.0,
+        "total_volume": 1900.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-16",
+        "top_weight_kg": 25.0,
+        "total_volume": 1740.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-18",
+        "top_weight_kg": 25.0,
+        "total_volume": 1250.0,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-03-21",
+        "top_weight_kg": 25.0,
+        "total_volume": 1800.0,
+        "num_sets": 9
+      },
+      {
+        "date": "2026-03-23",
+        "top_weight_kg": 25.0,
+        "total_volume": 1300.0,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-03-26",
+        "top_weight_kg": 25.0,
+        "total_volume": 1800.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-28",
+        "top_weight_kg": 25.0,
+        "total_volume": 800.0,
+        "num_sets": 2
+      },
+      {
+        "date": "2026-04-02",
+        "top_weight_kg": 30.0,
+        "total_volume": 300.0,
+        "num_sets": 11
+      },
+      {
+        "date": "2026-04-04",
+        "top_weight_kg": 27.5,
+        "total_volume": 1950.0,
+        "num_sets": 4
+      }
+    ],
+    "Butt Hinge": [
+      {
+        "date": "2026-01-30",
+        "top_weight_kg": 5.0,
+        "total_volume": 255.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-02",
+        "top_weight_kg": 7.5,
+        "total_volume": 390.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-06",
+        "top_weight_kg": 10.0,
+        "total_volume": 420.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-10",
+        "top_weight_kg": 10.0,
+        "total_volume": 400.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-17",
+        "top_weight_kg": 7.5,
+        "total_volume": 275.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-23",
+        "top_weight_kg": 10.0,
+        "total_volume": 505.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-25",
+        "top_weight_kg": 12.0,
+        "total_volume": 100.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-14",
+        "top_weight_kg": 5.0,
+        "total_volume": 170.0,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-03-16",
+        "top_weight_kg": 10.0,
+        "total_volume": 320.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-18",
+        "top_weight_kg": 10.0,
+        "total_volume": 100.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-03-21",
+        "top_weight_kg": 10.0,
+        "total_volume": 310.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-23",
+        "top_weight_kg": 10.0,
+        "total_volume": 310.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-26",
+        "top_weight_kg": 5.0,
+        "total_volume": 50.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-03-28",
+        "top_weight_kg": 5.0,
+        "total_volume": 10.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-03-30",
+        "top_weight_kg": 2.5,
+        "total_volume": 50.0,
+        "num_sets": 2
+      }
+    ],
+    "Goblet Squat": [
+      {
+        "date": "2026-01-30",
+        "top_weight_kg": 22.5,
+        "total_volume": 870.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-02",
+        "top_weight_kg": 22.5,
+        "total_volume": 750.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-06",
+        "top_weight_kg": 15.0,
+        "total_volume": 610.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-14",
+        "top_weight_kg": 20.0,
+        "total_volume": 350.0,
+        "num_sets": 2
+      },
+      {
+        "date": "2026-02-15",
+        "top_weight_kg": 22.5,
+        "total_volume": 700.0,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-02-17",
+        "top_weight_kg": 15.0,
+        "total_volume": 550.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-20",
+        "top_weight_kg": 15.0,
+        "total_volume": 355.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-23",
+        "top_weight_kg": 20.0,
+        "total_volume": 790.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-25",
+        "top_weight_kg": 15.0,
+        "total_volume": 580.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-14",
+        "top_weight_kg": 15.0,
+        "total_volume": 250.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-16",
+        "top_weight_kg": 10.0,
+        "total_volume": 90.0,
+        "num_sets": 2
+      },
+      {
+        "date": "2026-03-18",
+        "top_weight_kg": 5.0,
+        "total_volume": 0.0,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-03-21",
+        "top_weight_kg": 10.0,
+        "total_volume": 117.5,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-23",
+        "top_weight_kg": 2.5,
+        "total_volume": 7.5,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-03-26",
+        "top_weight_kg": 20.0,
+        "total_volume": 240.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-04-04",
+        "top_weight_kg": 5.0,
+        "total_volume": 45.0,
+        "num_sets": 2
+      }
+    ],
+    "Lat Pull-down": [
+      {
+        "date": "2026-02-02",
+        "top_weight_kg": 22.68,
+        "total_volume": 907.2,
+        "num_sets": 3
+      },
+      {
+        "date": "2026-02-06",
+        "top_weight_kg": 27.22,
+        "total_volume": 789.3,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-10",
+        "top_weight_kg": 22.68,
+        "total_volume": 907.2,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-15",
+        "top_weight_kg": 22.68,
+        "total_volume": 226.8,
+        "num_sets": 1
+      },
+      {
+        "date": "2026-02-17",
+        "top_weight_kg": 22.68,
+        "total_volume": 975.2,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-02-23",
+        "top_weight_kg": 24.95,
+        "total_volume": 861.9,
+        "num_sets": 5
+      },
+      {
+        "date": "2026-02-25",
+        "top_weight_kg": 24.95,
+        "total_volume": 952.6,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-14",
+        "top_weight_kg": 20.0,
+        "total_volume": 690.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-16",
+        "top_weight_kg": 20.0,
+        "total_volume": 870.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-18",
+        "top_weight_kg": 20.0,
+        "total_volume": 500.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-21",
+        "top_weight_kg": 20.0,
+        "total_volume": 720.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-23",
+        "top_weight_kg": 20.0,
+        "total_volume": 810.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-26",
+        "top_weight_kg": 20.0,
+        "total_volume": 744.0,
+        "num_sets": 4
+      },
+      {
+        "date": "2026-03-28",
+        "top_weight_kg": 20.0,
+        "total_volume": 432.0,
+        "num_sets": 2
+      },
+      {
+        "date": "2026-03-30",
+        "top_weight_kg": 25.0,
+        "total_volume": 1007.5,
+        "num_sets": 6
+      },
+      {
+        "date": "2026-04-04",
+        "top_weight_kg": 25.0,
+        "total_volume": 610.0,
+        "num_sets": 4
+      }
+    ]
+  }
+}
