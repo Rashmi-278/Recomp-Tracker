@@ -65,20 +65,24 @@ const dateKey = (gridStart, weekIdx, dayIdx) => {
 // ─── Migrate old array-based checks to date-keyed format ───
 const migrateChecksFormat = (data, weekIdx, gridStart) => {
   if (!data?.checks) return data;
-  const firstKey = Object.keys(data.checks)[0];
-  if (!firstKey) return data; // empty, already new format
-  if (/^\d{4}-\d{2}-\d{2}$/.test(firstKey)) return data; // already date-keyed
-  // Old format: { paramId: [bool × 7] }
+  const entries = Object.entries(data.checks);
+  if (!entries.length) return data;
+  const hasOldFormat = entries.some(([key]) => !/^\d{4}-\d{2}-\d{2}$/.test(key));
+  if (!hasOldFormat) return data; // already fully date-keyed
+  // Mixed or fully old format — preserve existing date entries, convert arrays
   const newChecks = {};
-  Object.entries(data.checks).forEach(([paramId, boolArray]) => {
-    if (!Array.isArray(boolArray)) return;
-    boolArray.forEach((checked, dayIdx) => {
-      if (checked) {
-        const dk = dateKey(gridStart, weekIdx, dayIdx);
-        if (!newChecks[dk]) newChecks[dk] = {};
-        newChecks[dk][paramId] = true;
-      }
-    });
+  entries.forEach(([key, val]) => {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(key)) {
+      newChecks[key] = val; // preserve existing date-keyed entries
+    } else if (Array.isArray(val)) {
+      val.forEach((checked, dayIdx) => {
+        if (checked) {
+          const dk = dateKey(gridStart, weekIdx, dayIdx);
+          if (!newChecks[dk]) newChecks[dk] = {};
+          newChecks[dk][key] = true;
+        }
+      });
+    }
   });
   return { ...data, checks: newChecks };
 };
