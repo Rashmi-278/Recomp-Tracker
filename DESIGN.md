@@ -10,33 +10,34 @@
 
 ---
 
-## Color System
+## Color System — Maroon Pink (updated April 2026)
+
+4-color maroon system. Warmer, more intentional than the original hot-pink palette.
 
 | Token | Value | Use |
 |-------|-------|-----|
 | `bg-deep` | `#1a0a10` | App background |
 | `bg-mid` | `#120810` | Gradient mid |
 | `bg-dark` | `#0d0609` | Gradient bottom |
-| `pink-primary` | `#ff6b9d` | Primary accent, links, active |
-| `pink-hot` | `#e84393` | Gradient end, CTA buttons |
-| `pink-light` | `#ff85b3` | Text accents, titles |
-| `pink-pale` | `#ffb6d3` | Soft highlights |
-| `pink-ghost` | `#ffd1e3` | Disabled highlights |
+| `surface-dark` | `#3A0519` | Deep maroon surface / card bg variant |
+| `border-dark` | `#670D2F` | Subtle borders, muted accents |
+| `accent` | `#A53860` | Secondary accent, gradient start, icons |
+| `primary` | `#EF88AD` | Primary text accent, active states, hearts |
 | `text-primary` | `#e8c8d8` | Body text |
-| `text-muted` | `#886677` | Secondary text |
-| `text-dim` | `#664455` | Tertiary text, subtext |
-| `text-faint` | `#553344` | Very muted, barely visible |
-| `border` | `rgba(255,107,157,0.12)` | Default border |
-| `border-active` | `rgba(255,107,157,0.4)` | Active/focused border |
-| `surface` | `rgba(255,107,157,0.04)` | Card backgrounds |
-| `surface-active` | `rgba(255,107,157,0.12)` | Active cell/card bg |
+| `text-muted` | `#886677` | Secondary text (~3.8:1 contrast) |
+| `text-dim` | `#887766` | Tertiary text, subtext (~4:1 contrast) |
+| `text-faint` | `#776655` | Very muted, barely visible (~3.2:1 contrast) |
+| `border` | `rgba(103,13,47,0.3)` | Default border |
+| `border-active` | `rgba(239,136,173,0.4)` | Active/focused border |
+| `surface` | `rgba(165,56,96,0.06)` | Card backgrounds |
+| `surface-active` | `rgba(165,56,96,0.15)` | Active cell/card bg |
 
 ### Gradients
-- **Title gradient:** `linear-gradient(135deg, #ff6b9d, #e84393, #ff85b3)` — applied as `-webkit-background-clip: text`
-- **CTA button:** `linear-gradient(135deg, #ff6b9d, #e84393)`
-- **Progress bar (full):** `linear-gradient(90deg, #ff6b9d, #e84393, #a855f7)`
-- **Progress bar (mid):** `linear-gradient(90deg, #ff6b9d, #ffb6d3)`
-- **Progress bar (early):** `linear-gradient(90deg, #ffb6d3, #ffd1e3)`
+- **Title gradient:** `linear-gradient(135deg, #EF88AD, #A53860, #EF88AD)` — `-webkit-background-clip: text`
+- **CTA button:** `linear-gradient(135deg, #A53860, #EF88AD)`
+- **Progress bar (full):** `linear-gradient(90deg, #A53860, #EF88AD, #a855f7)`
+- **Progress bar (mid):** `linear-gradient(90deg, #A53860, #EF88AD)`
+- **Progress bar (early):** `linear-gradient(90deg, #670D2F, #A53860)`
 
 ---
 
@@ -65,74 +66,106 @@
 
 ### Grid Cell
 ```
-width: 44px, height: 44px
+Desktop: width: 44px, height: 44px
+Mobile (<480px): width: 36px, height: 36px (via .rc-cell CSS override)
 borderRadius: 10px
-border: 1px solid rgba(255,107,157,0.12)
-bg: rgba(255,107,157,0.03)
+border: 1px solid rgba(165,56,96,0.12)
+bg: rgba(165,56,96,0.03)
 
 Active:
-  bg: rgba(255,107,157,0.12)
-  border: 1px solid rgba(255,107,157,0.4)
-  boxShadow: 0 0 12px rgba(255,107,157,0.15)
+  bg: rgba(165,56,96,0.12)
+  border: 1px solid rgba(165,56,96,0.4)
+  boxShadow: 0 0 12px rgba(165,56,96,0.15)
 
-Hover (via .rc-cell CSS class):
-  bg: rgba(255,107,157,0.09)
-  border-color: rgba(255,107,157,0.35)
+Hover (.rc-cell):
+  bg: rgba(165,56,96,0.12)
+  border-color: rgba(239,136,173,0.35)
 
 Active:
   transform: scale(0.92)
 
 Disabled:
-  bg: rgba(255,107,157,0.01)
-  border: 1px solid rgba(255,107,157,0.04)
+  bg: rgba(165,56,96,0.01)
+  border: 1px solid rgba(165,56,96,0.04)
   opacity: 0.2
 ```
 
+**Mobile compact grid (<480px):**
+- Param labels: icon-only (text hidden via `.rc-param-label-text { display: none }`)
+- Weekly count column: hidden (`.rc-weekly-count { display: none }`)
+- Grid columns: `32px repeat(7, 36px)` — fits 375px screens without horizontal scroll
+
 ### Card
 ```
-bg: rgba(255,107,157,0.04)
-border: 1px solid rgba(255,107,157,0.1)
+bg: rgba(165,56,96,0.06)
+border: 1px solid rgba(103,13,47,0.25)
 borderRadius: 14px
 padding: 16px
 ```
 
 ### Button — Primary CTA
 ```
-bg: linear-gradient(135deg, #ff6b9d, #e84393)
+bg: linear-gradient(135deg, #A53860, #EF88AD)
 border: none, color: #fff
 padding: 14px 40px, borderRadius: 50px
 fontSize: 16px, fontWeight: 700, letterSpacing: 1px
-boxShadow: 0 4px 20px rgba(255,107,157,0.4)
+boxShadow: 0 4px 20px rgba(165,56,96,0.4)
 ```
 
 ### Button — Ghost
 ```
-bg: rgba(255,107,157,0.08)
-border: 1px solid rgba(255,107,157,0.15)
-color: #ff85b3
+bg: rgba(165,56,96,0.08)
+border: 1px solid rgba(103,13,47,0.3)
+color: #EF88AD
 borderRadius: 8px, padding: 8px 16px
-Hover (.rc-weekbtn): bg rgba(255,107,157,0.14)
+Hover (.rc-weekbtn): bg rgba(165,56,96,0.15)
 ```
 
 ### Rating Buttons (1-5)
 ```
 flex: 1, padding: 10px 0, minHeight: 44px
-bg: rgba(255,107,157,0.04)
-border: 1px solid rgba(255,107,157,0.12)
-borderRadius: 10px, color: #664455
-Active: bg rgba(255,107,157,0.15), border rgba(255,107,157,0.4), color #ff6b9d
+bg: rgba(165,56,96,0.04)
+border: 1px solid rgba(165,56,96,0.12)
+borderRadius: 10px, color: #887766
+Active: bg rgba(165,56,96,0.15), border rgba(165,56,96,0.4), color #EF88AD
 Unset: null value — buttons show no highlighted state
-Hover (.rc-rating): bg rgba(255,107,157,0.1), color #ffb6d3
+Hover (.rc-rating): bg rgba(165,56,96,0.12), color #EF88AD
 ```
 
 ### Tab Bar
 ```
-flex row, full width
-Default: color: #664455, borderBottom: 2px solid transparent
-Active: color: #ff85b3, borderBottom: 2px solid #ff6b9d
+flex row, full width, no decorative prefix
+Default: color: #887766, borderBottom: 2px solid transparent
+Active: color: #EF88AD, borderBottom: 2px solid #EF88AD
+```
+
+### Sync Status Dot
+```
+width: 8px, height: 8px, borderRadius: 50%
+Synced: bg #6bff9d (green)
+Saving: bg #ffd700 (amber)
+Error:  bg #ff4757 (red)
+Located in compact top bar, right-aligned
 ```
 
 ---
+
+## Layout Architecture (updated April 2026)
+
+```
+┌─────────────────────────────────────┐
+│ [━━━━━╋───] DAY 27 · 10w · 28%    │  Sticky progress bar
+├─────────────────────────────────────┤
+│ ‹ Week 4 · 72% ›  [●] [☰]        │  Compact top bar (week nav + adherence + sync + menu)
+├─────────────────────────────────────┤
+│ Daily | Weekly | Lifts | Notes     │  Tabs (no ✦ prefix)
+├─────────────────────────────────────┤
+│ [grid / weekly / lifts / notes]    │  Content area
+└─────────────────────────────────────┘
+```
+
+**Removed:** RECOMP title, protocol card, legend.
+**Added:** Hamburger menu (☰) for profile, export, logout, delete.
 
 ## Tab Structure
 
@@ -140,7 +173,7 @@ Active: color: #ff85b3, borderBottom: 2px solid #ff6b9d
 Daily  |  Weekly  |  Lifts  |  Notes
 ```
 
-- **Daily** — 8-row × 7-day adherence grid
+- **Daily** — 8-row × 7-day adherence grid (compact on mobile)
 - **Weekly** — Check-in metrics (weight, waist, bf%, energy, mood, soreness)
 - **Lifts** — Strength training log (see spec below)
 - **Notes** — Free-form weekly journal

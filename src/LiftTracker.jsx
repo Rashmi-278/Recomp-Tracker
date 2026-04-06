@@ -237,14 +237,14 @@ function ExerciseChart({ name, progression }) {
 
   return (
     <div style={{
-      background: "rgba(255,107,157,0.02)",
-      border: "1px solid rgba(255,107,157,0.08)",
+      background: "rgba(165,56,96,0.02)",
+      border: "1px solid rgba(165,56,96,0.08)",
       borderRadius: "12px",
       padding: "10px 12px 8px",
       marginBottom: "8px",
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-        <span style={{ fontSize: "12px", fontWeight: 600, color: "#ff85b3" }}>{name}</span>
+        <span style={{ fontSize: "12px", fontWeight: 600, color: "#EF88AD" }}>{name}</span>
         <span style={{ fontSize: "11px", fontWeight: 600, color: deltaColor }}>{deltaStr}</span>
       </div>
 
@@ -253,24 +253,24 @@ function ExerciseChart({ name, progression }) {
         {gridLines.map(({ y, label }) => (
           <g key={y}>
             <line x1={PAD.left} y1={y} x2={W - PAD.right} y2={y}
-              stroke="rgba(255,107,157,0.06)" strokeWidth="1" />
-            <text x={PAD.left - 4} y={y + 3} fontSize="8" fill="#553344" textAnchor="end">{label}</text>
+              stroke="rgba(165,56,96,0.06)" strokeWidth="1" />
+            <text x={PAD.left - 4} y={y + 3} fontSize="8" fill="#776655" textAnchor="end">{label}</text>
           </g>
         ))}
 
         {/* Polyline */}
         <polyline points={points} fill="none"
-          stroke="rgba(255,107,157,0.5)" strokeWidth="1.5" strokeLinejoin="round" />
+          stroke="rgba(165,56,96,0.5)" strokeWidth="1.5" strokeLinejoin="round" />
 
         {/* Dots */}
         {progression.map((p, i) => (
           <circle key={i} cx={toX(i)} cy={toY(p.top_weight_kg || 0)}
-            r="3" fill="#ff6b9d" />
+            r="3" fill="#EF88AD" />
         ))}
 
         {/* X labels — first and last */}
         {xLabels.map(({ i, label }) => (
-          <text key={i} x={toX(i)} y={H - 3} fontSize="8" fill="#553344"
+          <text key={i} x={toX(i)} y={H - 3} fontSize="8" fill="#776655"
             textAnchor={i === 0 ? "start" : "end"}>{label}</text>
         ))}
       </svg>
@@ -307,7 +307,7 @@ function SessionCard({ session }) {
   });
 
   return (
-    <div style={{ borderBottom: "1px solid rgba(255,107,157,0.06)" }}>
+    <div style={{ borderBottom: "1px solid rgba(165,56,96,0.06)" }}>
       <button
         onClick={() => setOpen((o) => !o)}
         style={{
@@ -317,12 +317,12 @@ function SessionCard({ session }) {
         }}
       >
         <span>
-          <span style={{ color: "#ff85b3", marginRight: "8px" }}>{dateLabel}</span>
-          <span style={{ color: "#664455", marginRight: "8px" }}>·</span>
+          <span style={{ color: "#EF88AD", marginRight: "8px" }}>{dateLabel}</span>
+          <span style={{ color: "#887766", marginRight: "8px" }}>·</span>
           <span>{exerciseNames.length} exercise{exerciseNames.length !== 1 ? "s" : ""}</span>
-          <span style={{ color: "#553344", marginLeft: "8px" }}>{summary}{exerciseNames.length > 3 ? " …" : ""}</span>
+          <span style={{ color: "#776655", marginLeft: "8px" }}>{summary}{exerciseNames.length > 3 ? " …" : ""}</span>
         </span>
-        <span style={{ color: "#664455", fontSize: "11px" }}>{open ? "▲" : "▼"}</span>
+        <span style={{ color: "#887766", fontSize: "11px" }}>{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (
@@ -331,9 +331,9 @@ function SessionCard({ session }) {
             const ex = session.exercises[name];
             return (
               <div key={name} style={{ marginBottom: "8px" }}>
-                <div style={{ fontSize: "12px", fontWeight: 600, color: "#ff85b3", marginBottom: "4px" }}>{name}</div>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#EF88AD", marginBottom: "4px" }}>{name}</div>
                 {ex.sets.map((set, i) => (
-                  <div key={i} style={{ fontSize: "12px", color: "#664455", paddingLeft: "12px" }}>
+                  <div key={i} style={{ fontSize: "12px", color: "#887766", paddingLeft: "12px" }}>
                     {set.sets > 1 ? `${set.sets}×` : ""}
                     {set.reps ? `${set.reps} reps` : ""}
                     {set.weight_kg ? ` @ ${set.weight_kg}kg` : ""}
@@ -355,20 +355,20 @@ function ConfirmCard({ parsed, onSave, onClear }) {
   const { sessionDate, sets, unrecognized } = parsed;
   return (
     <div style={{
-      background: "rgba(255,107,157,0.04)",
-      border: "1px solid rgba(255,107,157,0.1)",
+      background: "rgba(165,56,96,0.04)",
+      border: "1px solid rgba(165,56,96,0.1)",
       borderRadius: "14px",
       padding: "16px",
       marginTop: "12px",
     }}>
-      <div style={{ fontSize: "12px", fontWeight: 700, color: "#ff85b3", marginBottom: "12px", letterSpacing: "1px" }}>
+      <div style={{ fontSize: "12px", fontWeight: 700, color: "#EF88AD", marginBottom: "12px", letterSpacing: "1px" }}>
         ✓ Parsed{sessionDate ? ` — ${new Date(sessionDate + "T12:00:00").toLocaleDateString("en-GB", { month: "short", day: "numeric" })}` : " — today"}
       </div>
 
       {sets.map((set, i) => (
         <div key={i} style={{ fontSize: "13px", color: "#e8c8d8", marginBottom: "4px", display: "flex", gap: "8px" }}>
           <span style={{ color: "#886677", minWidth: "140px" }}>{set.exercise}</span>
-          <span style={{ color: "#664455" }}>
+          <span style={{ color: "#887766" }}>
             {set.sets > 1 ? `${set.sets}×` : ""}
             {set.reps ? `${set.reps}` : ""}
             {set.weight_kg ? ` @ ${set.weight_kg}kg` : ""}
@@ -378,25 +378,25 @@ function ConfirmCard({ parsed, onSave, onClear }) {
       ))}
 
       {unrecognized.map((line, i) => (
-        <div key={i} style={{ fontSize: "11px", color: "#553344", marginTop: "4px" }}>
+        <div key={i} style={{ fontSize: "11px", color: "#776655", marginTop: "4px" }}>
           unrecognized: {line}
         </div>
       ))}
 
       <div style={{ display: "flex", gap: "8px", marginTop: "16px" }}>
         <button onClick={onSave} style={{
-          background: "linear-gradient(135deg, #ff6b9d, #e84393)",
+          background: "linear-gradient(135deg, #EF88AD, #A53860)",
           border: "none", color: "#fff",
           padding: "10px 28px", borderRadius: "50px",
           fontSize: "14px", fontWeight: 700, cursor: "pointer",
-          boxShadow: "0 4px 20px rgba(255,107,157,0.4)",
+          boxShadow: "0 4px 20px rgba(165,56,96,0.4)",
         }}>
           ✓ Looks right — save it
         </button>
         <button onClick={onClear} style={{
-          background: "rgba(255,107,157,0.08)",
-          border: "1px solid rgba(255,107,157,0.15)",
-          color: "#ff85b3", borderRadius: "8px",
+          background: "rgba(165,56,96,0.08)",
+          border: "1px solid rgba(165,56,96,0.15)",
+          color: "#EF88AD", borderRadius: "8px",
           padding: "10px 16px", fontSize: "14px", cursor: "pointer",
         }}>
           Clear
@@ -496,9 +496,9 @@ plank hold 3x45s`;
           Couldn't load your lift data.
         </div>
         <button onClick={load} style={{
-          background: "rgba(255,107,157,0.08)",
-          border: "1px solid rgba(255,107,157,0.15)",
-          color: "#ff85b3", borderRadius: "8px",
+          background: "rgba(165,56,96,0.08)",
+          border: "1px solid rgba(165,56,96,0.15)",
+          color: "#EF88AD", borderRadius: "8px",
           padding: "10px 20px", fontSize: "14px", cursor: "pointer",
         }}>
           Retry
@@ -509,7 +509,7 @@ plank hold 3x45s`;
 
   // ─── Loading state ───
   if (loadState === "loading") {
-    return <div style={{ padding: "40px 20px", textAlign: "center", color: "#553344", fontSize: "14px" }}>Loading…</div>;
+    return <div style={{ padding: "40px 20px", textAlign: "center", color: "#776655", fontSize: "14px" }}>Loading…</div>;
   }
 
   return (
@@ -522,8 +522,8 @@ plank hold 3x45s`;
         placeholder={PLACEHOLDER}
         style={{
           width: "100%", minHeight: "140px", boxSizing: "border-box",
-          background: "rgba(255,107,157,0.03)",
-          border: "1px solid rgba(255,107,157,0.1)",
+          background: "rgba(165,56,96,0.03)",
+          border: "1px solid rgba(165,56,96,0.1)",
           borderRadius: "14px", color: "#e8c8d8",
           fontSize: "14px", fontFamily: "'DM Sans', sans-serif",
           padding: "14px", resize: "vertical", outline: "none",
@@ -535,11 +535,11 @@ plank hold 3x45s`;
         disabled={!inputText.trim() || saving}
         style={{
           marginTop: "10px",
-          background: inputText.trim() ? "linear-gradient(135deg, #ff6b9d, #e84393)" : "rgba(255,107,157,0.08)",
-          border: "none", color: inputText.trim() ? "#fff" : "#664455",
+          background: inputText.trim() ? "linear-gradient(135deg, #EF88AD, #A53860)" : "rgba(165,56,96,0.08)",
+          border: "none", color: inputText.trim() ? "#fff" : "#887766",
           padding: "10px 28px", borderRadius: "50px",
           fontSize: "14px", fontWeight: 700, cursor: inputText.trim() ? "pointer" : "not-allowed",
-          boxShadow: inputText.trim() ? "0 4px 20px rgba(255,107,157,0.3)" : "none",
+          boxShadow: inputText.trim() ? "0 4px 20px rgba(165,56,96,0.3)" : "none",
         }}
       >
         Log it 💪
@@ -551,7 +551,7 @@ plank hold 3x45s`;
           marginTop: "10px", fontSize: "13px", padding: "8px 12px", borderRadius: "8px",
           background: saveMsg.type === "error" ? "rgba(232,67,147,0.08)" : saveMsg.type === "warn" ? "rgba(255,200,50,0.08)" : "rgba(107,255,157,0.08)",
           border: `1px solid ${saveMsg.type === "error" ? "rgba(232,67,147,0.2)" : saveMsg.type === "warn" ? "rgba(255,200,50,0.2)" : "rgba(107,255,157,0.2)"}`,
-          color: saveMsg.type === "error" ? "#e84393" : saveMsg.type === "warn" ? "#d4a800" : "#6bff9d",
+          color: saveMsg.type === "error" ? "#A53860" : saveMsg.type === "warn" ? "#d4a800" : "#6bff9d",
         }}>
           {saveMsg.text}
         </div>
@@ -567,7 +567,7 @@ plank hold 3x45s`;
         <div style={{ marginTop: "24px" }}>
           <div style={{
             fontSize: "12px", fontWeight: 700, letterSpacing: "3px",
-            color: "#664455", textTransform: "uppercase", marginBottom: "8px",
+            color: "#887766", textTransform: "uppercase", marginBottom: "8px",
           }}>
             Session History
           </div>
@@ -582,7 +582,7 @@ plank hold 3x45s`;
         <div style={{ marginTop: "20px" }}>
           <div style={{
             fontSize: "11px", fontWeight: 700, letterSpacing: "3px",
-            color: "#553344", textTransform: "uppercase", marginBottom: "8px",
+            color: "#776655", textTransform: "uppercase", marginBottom: "8px",
           }}>
             Progression
           </div>
@@ -594,10 +594,10 @@ plank hold 3x45s`;
 
       {/* Empty state */}
       {sortedSessions.length === 0 && !parsed && (
-        <div style={{ textAlign: "center", padding: "40px 20px", color: "#664455", fontSize: "14px" }}>
+        <div style={{ textAlign: "center", padding: "40px 20px", color: "#887766", fontSize: "14px" }}>
           <div style={{ fontSize: "32px", marginBottom: "12px" }}>🏋️‍♀️</div>
           <div style={{ marginBottom: "8px" }}>No gym sessions logged yet.</div>
-          <div style={{ color: "#553344", fontSize: "13px" }}>
+          <div style={{ color: "#776655", fontSize: "13px" }}>
             Paste your session notes above and hit "Log it".<br />
             Format: exercise name, weight/reps, e.g.<br />
             <code style={{ color: "#886677" }}>shoulder press 3x10 @15kg</code>

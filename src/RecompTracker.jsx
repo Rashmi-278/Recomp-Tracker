@@ -481,15 +481,30 @@ const APP_CSS = `
   @keyframes celebPop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   @keyframes celebPulse { from { transform: scale(1); } to { transform: scale(1.15); } }
   @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-  @keyframes perfectDay { 0% { box-shadow: 0 0 0 0 rgba(255,107,157,0.4); } 70% { box-shadow: 0 0 0 8px rgba(255,107,157,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,157,0); } }
+  @keyframes perfectDay { 0% { box-shadow: 0 0 0 0 rgba(165,56,96,0.4); } 70% { box-shadow: 0 0 0 8px rgba(165,56,96,0); } 100% { box-shadow: 0 0 0 0 rgba(165,56,96,0); } }
   @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
   @keyframes slideBannerIn { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
-  .rc-cell:hover:not(:disabled) { background: rgba(255,107,157,0.09) !important; border-color: rgba(255,107,157,0.35) !important; }
+  .rc-cell:hover:not(:disabled) { background: rgba(165,56,96,0.12) !important; border-color: rgba(239,136,173,0.35) !important; }
   .rc-cell:active:not(:disabled) { transform: scale(0.92); }
-  .rc-rating:hover { background: rgba(255,107,157,0.1) !important; border-color: rgba(255,107,157,0.3) !important; color: #ffb6d3 !important; }
-  .rc-weekbtn:hover { background: rgba(255,107,157,0.14) !important; border-color: rgba(255,107,157,0.3) !important; }
+  .rc-rating:hover { background: rgba(165,56,96,0.12) !important; border-color: rgba(103,13,47,0.5) !important; color: #EF88AD !important; }
+  .rc-weekbtn:hover { background: rgba(165,56,96,0.15) !important; border-color: rgba(103,13,47,0.5) !important; }
+  @media (max-width: 480px) {
+    .rc-param-label-text { display: none !important; }
+    .rc-weekly-count { display: none !important; }
+    .rc-weekly-col-header { display: none !important; }
+    .rc-grid-row { grid-template-columns: 32px repeat(7, 36px) !important; }
+    .rc-grid-header { grid-template-columns: 32px repeat(7, 36px) !important; }
+    .rc-cell { width: 36px !important; height: 36px !important; }
+  }
   @media (max-width: 480px) { .rc-weekly-grid { grid-template-columns: 1fr !important; } }
+  .rc-menu-overlay { position: fixed; inset: 0; z-index: 800; background: rgba(10,4,8,0.7); backdrop-filter: blur(4px); }
+  .rc-menu-panel { position: absolute; top: 50px; right: 12px; background: #1a0a10; border: 1px solid rgba(103,13,47,0.4); border-radius: 14px; padding: 8px 0; min-width: 200px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+  .rc-menu-item { display: flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 13px; color: #EF88AD; cursor: pointer; border: none; background: none; width: 100%; font-family: inherit; text-align: left; }
+  .rc-menu-item:hover { background: rgba(165,56,96,0.1); }
+  .rc-menu-divider { height: 1px; background: rgba(103,13,47,0.3); margin: 4px 0; }
+  .rc-menu-item.danger { color: #ff4757; }
+  .rc-menu-item.danger:hover { background: rgba(255,71,87,0.08); }
 `;
 
 // ─── Celebration overlay ───
@@ -505,7 +520,7 @@ function CelebrationOverlay({ message, onClose }) {
 
     const particles = [];
     const emojis = ["\u2728", "\u{1F496}", "\u{1F525}", "\u{1F451}", "\u{1F485}", "\u{1F98B}", "\u{1F338}", "\u{1F48E}", "\u2B50", "\u{1FA9E}"];
-    const colors = ["#ff6b9d", "#ff85b3", "#ffa3c4", "#ffb6d3", "#ffd1e3", "#fff", "#ffc2e2", "#e84393", "#fd79a8"];
+    const colors = ["#EF88AD", "#A53860", "#c9608a", "#EF88AD", "#670D2F", "#fff", "#d4789a", "#A53860", "#EF88AD"];
 
     for (let i = 0; i < 80; i++) {
       particles.push({
@@ -583,7 +598,7 @@ function CelebrationOverlay({ message, onClose }) {
 const celebStyles = {
   overlay: {
     position: "fixed", inset: 0, zIndex: 1000,
-    background: "radial-gradient(ellipse at center, rgba(255,107,157,0.15) 0%, rgba(20,5,10,0.92) 70%)",
+    background: "radial-gradient(ellipse at center, rgba(165,56,96,0.15) 0%, rgba(20,5,10,0.92) 70%)",
     display: "flex", alignItems: "center", justifyContent: "center",
     backdropFilter: "blur(4px)",
   },
@@ -591,24 +606,24 @@ const celebStyles = {
   messageWrap: {
     position: "relative", zIndex: 2, textAlign: "center",
     padding: "40px 48px", borderRadius: "24px",
-    background: "linear-gradient(135deg, rgba(255,107,157,0.12), rgba(255,182,211,0.08))",
-    border: "1px solid rgba(255,107,157,0.3)",
-    boxShadow: "0 0 60px rgba(255,107,157,0.2), 0 0 120px rgba(255,107,157,0.1)",
+    background: "linear-gradient(135deg, rgba(165,56,96,0.15), rgba(103,13,47,0.1))",
+    border: "1px solid rgba(165,56,96,0.3)",
+    boxShadow: "0 0 60px rgba(165,56,96,0.2), 0 0 120px rgba(165,56,96,0.1)",
     animation: "celebPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both",
   },
   flame: { fontSize: "56px", marginBottom: "12px", animation: "celebPulse 0.8s ease-in-out infinite alternate" },
   messageText: {
     fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "28px", fontWeight: 700, color: "#ff85b3",
+    fontSize: "28px", fontWeight: 700, color: "#EF88AD",
     letterSpacing: "2px", marginBottom: "8px",
-    textShadow: "0 0 20px rgba(255,107,157,0.4)",
+    textShadow: "0 0 20px rgba(165,56,96,0.4)",
   },
   subText: { fontSize: "14px", color: "#c9809e", letterSpacing: "1px", marginBottom: "24px" },
   dismissBtn: {
-    background: "linear-gradient(135deg, #ff6b9d, #e84393)",
+    background: "linear-gradient(135deg, #A53860, #EF88AD)",
     border: "none", color: "#fff", padding: "12px 32px", borderRadius: "50px",
     fontSize: "15px", fontWeight: 700, cursor: "pointer", letterSpacing: "1px",
-    boxShadow: "0 4px 20px rgba(255,107,157,0.4)",
+    boxShadow: "0 4px 20px rgba(165,56,96,0.4)",
     fontFamily: "inherit",
   },
 };
@@ -638,26 +653,26 @@ function ProgressBar({ dates, isAnon }) {
           ...s.progressFill,
           width: `${pct}%`,
           background: pct >= 75
-            ? "linear-gradient(90deg, #ff6b9d, #e84393, #a855f7)"
+            ? "linear-gradient(90deg, #A53860, #EF88AD, #a855f7)"
             : pct >= 40
-            ? "linear-gradient(90deg, #ff6b9d, #ffb6d3)"
-            : "linear-gradient(90deg, #ffb6d3, #ffd1e3)",
+            ? "linear-gradient(90deg, #A53860, #EF88AD)"
+            : "linear-gradient(90deg, #670D2F, #A53860)",
         }} />
         {milestones.map((m, i) => (
           <div key={i} style={{ ...s.milestone, left: `${m.pct}%` }}>
             <div style={{
               ...s.milestoneDot,
-              background: pct >= m.pct ? "#ff6b9d" : "rgba(255,107,157,0.2)",
-              boxShadow: pct >= m.pct ? "0 0 8px rgba(255,107,157,0.5)" : "none",
-              border: pct >= m.pct ? "2px solid #ff85b3" : "2px solid rgba(255,107,157,0.3)",
+              background: pct >= m.pct ? "#EF88AD" : "rgba(165,56,96,0.2)",
+              boxShadow: pct >= m.pct ? "0 0 8px rgba(165,56,96,0.5)" : "none",
+              border: pct >= m.pct ? "2px solid #EF88AD" : "2px solid rgba(165,56,96,0.3)",
             }} />
-            <span style={{ ...s.milestoneLabel, color: pct >= m.pct ? "#ff85b3" : "#664455" }}>{m.label}</span>
+            <span style={{ ...s.milestoneLabel, color: pct >= m.pct ? "#EF88AD" : "#887766" }}>{m.label}</span>
           </div>
         ))}
       </div>
       <div style={s.progressDates}>
         <span>{startLabel}</span>
-        <span style={{ color: "#ff6b9d", fontWeight: 700, fontSize: "12px" }}>12-week recomp {"\u2728"}</span>
+        <span style={{ color: "#EF88AD", fontWeight: 700, fontSize: "12px" }}>12-week recomp {"\u2728"}</span>
         <span>{endLabel}</span>
       </div>
     </div>
@@ -847,7 +862,10 @@ export default function RecompTracker() {
   const [tab, setTab] = useState("daily");
   const [celebration, setCelebration] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [syncState, setSyncState] = useState("synced"); // "synced" | "saving" | "error"
   const [deleting, setDeleting] = useState(false);
+  const [prevWeekData, setPrevWeekData] = useState(null);
   const prevScoresRef = useRef({});
   const saveTimerRef = useRef(null);
   const latestDataRef = useRef(null);
@@ -958,14 +976,23 @@ export default function RecompTracker() {
     return () => { cancelled = true; };
   }, [week, userId, profile]);
 
+  // ─── Load previous week data for weekly tab context ───
+  useEffect(() => {
+    if (!userId || !profile || week === 0) { setPrevWeekData(null); return; }
+    Storage.load(week - 1, userId).then((saved) => setPrevWeekData(saved));
+  }, [week, userId, profile]);
+
   // ─── Debounced persist ───
   const persist = useCallback((newData) => {
     setData(newData);
     latestDataRef.current = newData;
     setSaving(true);
+    setSyncState("saving");
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {
-      Storage.save(week, latestDataRef.current, userId).then(() => setSaving(false));
+      Storage.save(week, latestDataRef.current, userId)
+        .then(() => { setSaving(false); setSyncState("synced"); })
+        .catch(() => { setSaving(false); setSyncState("error"); });
     }, 500);
   }, [week, userId]);
 
@@ -1088,10 +1115,6 @@ export default function RecompTracker() {
   }
 
   const isAnon = !authenticated;
-  const userEmail = user?.email?.address || user?.google?.email || "";
-  const displayName = isAnon
-    ? "Guest"
-    : userEmail || (user?.wallet?.address ? user.wallet.address.slice(0, 8) + "..." : "User");
 
   return (
     <div style={s.container}>
@@ -1101,34 +1124,71 @@ export default function RecompTracker() {
 
       <ProgressBar dates={dates} isAnon={isAnon} />
 
-      {/* User bar — different for anonymous vs authenticated */}
-      <div style={s.userBar}>
-        {isAnon ? (
-          <>
-            <span style={s.userInfo}>
-              {"\u{1F525}"} Guest mode {"\u00B7"} tracking locally
-            </span>
-            <button style={s.signInSmallBtn} onClick={login}>Sign In</button>
-          </>
-        ) : (
-          <>
-            <span style={s.userInfo}>{displayName} {"\u00B7"} <span style={{ color: "#886677" }}>/{profile.username}</span></span>
-            <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-              <button style={s.profileIconBtn} onClick={() => setShowProfile(true)} title="Profile">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff85b3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-              </button>
-              <button style={s.logoutBtn} onClick={logout}>Logout</button>
-            </div>
-          </>
-        )}
-      </div>
-
       {/* Upgrade banner for engaged anonymous users */}
       {showUpgradeBanner && (
         <UpgradeBanner onSave={login} onDismiss={() => setBannerDismissed(true)} />
+      )}
+
+      {/* Compact top bar: week nav + adherence + sync + menu */}
+      <div style={s.topBar}>
+        <div style={s.topBarLeft}>
+          <button className="rc-weekbtn" style={{ ...s.weekBtnSmall, opacity: week === 0 ? 0.3 : 1, pointerEvents: week === 0 ? "none" : "auto" }} onClick={() => setWeek(Math.max(0, week - 1))}>{"\u2039"}</button>
+          <div>
+            <span style={s.weekLabel}>{WEEK_LABELS[week]}</span>
+            <span style={s.topBarAdherence}>{"\u00B7"} {adherence}%</span>
+          </div>
+          <button className="rc-weekbtn" style={{ ...s.weekBtnSmall, opacity: week === maxWeek ? 0.3 : 1, pointerEvents: week === maxWeek ? "none" : "auto" }} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>{"\u203A"}</button>
+        </div>
+        <div style={s.topBarRight}>
+          <span style={s.weekDatesCompact}>{getWeekDates(week, dates.gridStart)}</span>
+          <span style={{
+            ...s.syncDot,
+            background: syncState === "synced" ? "#6bff9d" : syncState === "saving" ? "#ffd700" : "#ff4757",
+          }} title={syncState === "synced" ? "Synced" : syncState === "saving" ? "Saving..." : "Offline — saved locally"} />
+          {isAnon ? (
+            <button style={s.signInSmallBtn} onClick={login}>Sign In</button>
+          ) : (
+            <button style={s.menuBtn} onClick={() => setShowMenu(true)}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF88AD" strokeWidth="2" strokeLinecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Hamburger menu overlay */}
+      {showMenu && (
+        <div className="rc-menu-overlay" onClick={() => setShowMenu(false)}>
+          <div className="rc-menu-panel" onClick={(e) => e.stopPropagation()}>
+            <button className="rc-menu-item" onClick={() => { setShowMenu(false); setShowProfile(true); }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+              Profile
+            </button>
+            {profile?.username && (
+              <button className="rc-menu-item" onClick={() => { setShowMenu(false); window.open(`/${profile.username}`, "_blank"); }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                Public Page
+              </button>
+            )}
+            <button className="rc-menu-item" onClick={() => { setShowMenu(false); handleExport(); }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+              Export Data
+            </button>
+            <div className="rc-menu-divider" />
+            <button className="rc-menu-item" onClick={() => { setShowMenu(false); logout(); }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" /></svg>
+              Logout
+            </button>
+            <div className="rc-menu-divider" />
+            <button className="rc-menu-item danger" onClick={() => { setShowMenu(false); handleDelete(); }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" /></svg>
+              Delete All Data
+            </button>
+          </div>
+        </div>
       )}
 
       {/* Profile panel (authenticated only) */}
@@ -1136,7 +1196,7 @@ export default function RecompTracker() {
         <div style={s.profileOverlay} onClick={() => setShowProfile(false)}>
           <div style={s.profilePanel} onClick={(e) => e.stopPropagation()}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-              <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 700, color: "#ff85b3" }}>Profile</h2>
+              <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 700, color: "#EF88AD" }}>Profile</h2>
               <button style={s.profileCloseBtn} onClick={() => setShowProfile(false)}>{"\u2715"}</button>
             </div>
 
@@ -1152,7 +1212,7 @@ export default function RecompTracker() {
                 <button
                   style={{
                     ...s.profileToggle,
-                    background: profile.publicProfile !== false ? "rgba(255,107,157,0.3)" : "rgba(255,107,157,0.08)",
+                    background: profile.publicProfile !== false ? "rgba(165,56,96,0.3)" : "rgba(165,56,96,0.08)",
                   }}
                   onClick={async () => {
                     const updated = { ...profile, publicProfile: profile.publicProfile === false };
@@ -1167,61 +1227,15 @@ export default function RecompTracker() {
                 </button>
               </div>
             </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-              <button style={s.profileExportBtn} onClick={handleExport}>Export All Data (JSON)</button>
-              <button style={s.profileDeleteBtn} onClick={handleDelete} disabled={deleting}>
-                {deleting ? "Deleting..." : "Delete All My Data"}
-              </button>
-            </div>
           </div>
         </div>
       )}
 
       <div style={s.header}>
-        <div style={s.headerTop}>
-          <div>
-            <h1 style={s.title}>RECOMP</h1>
-            <p style={s.subtitle}>12-week recomp {"\u00B7"} {dates.startLabel} – {dates.endLabel}</p>
-            {isAnon && (
-              <p style={{ fontSize: "12px", color: "#886677", marginTop: "4px", letterSpacing: "0.5px" }}>
-                Sign in to set your own dates ↑
-              </p>
-            )}
-          </div>
-          <div style={s.adherenceRing}>
-            <svg width="70" height="70" viewBox="0 0 70 70">
-              <defs>
-                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ff6b9d" />
-                  <stop offset="100%" stopColor="#e84393" />
-                </linearGradient>
-              </defs>
-              <circle cx="35" cy="35" r="28" fill="none" stroke="rgba(255,107,157,0.1)" strokeWidth="5" />
-              <circle cx="35" cy="35" r="28" fill="none" stroke="url(#ringGrad)" strokeWidth="5"
-                strokeDasharray={`${(adherence / 100) * 175.9} 175.9`}
-                strokeLinecap="round" transform="rotate(-90 35 35)"
-                style={{ transition: "stroke-dasharray 0.5s ease" }}
-              />
-            </svg>
-            <span style={s.adherenceText}>{adherence}%</span>
-          </div>
-        </div>
-
-        <div style={s.weekRow}>
-          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === 0 ? 0.3 : 1, pointerEvents: week === 0 ? "none" : "auto" }} onClick={() => setWeek(Math.max(0, week - 1))}>{"\u2039"}</button>
-          <div style={{ textAlign: "center" }}>
-            <span style={s.weekLabel}>{WEEK_LABELS[week]}</span>
-            <div style={s.weekDates}>{getWeekDates(week, dates.gridStart)}</div>
-          </div>
-          <button className="rc-weekbtn" style={{ ...s.weekBtn, opacity: week === maxWeek ? 0.3 : 1, pointerEvents: week === maxWeek ? "none" : "auto" }} onClick={() => setWeek(Math.min(maxWeek, week + 1))}>{"\u203A"}</button>
-          {saving && <span style={s.saveIndicator}>saving…</span>}
-        </div>
-
         <div style={s.tabs}>
           {["daily", "weekly", "lifts", "notes"].map((t) => (
             <button key={t} style={{ ...s.tab, ...(tab === t ? s.tabActive : {}) }} onClick={() => setTab(t)}>
-              {t === "daily" ? "\u2726 Daily" : t === "weekly" ? "\u2726 Weekly" : t === "lifts" ? "\u2726 Lifts" : "\u2726 Notes"}
+              {t.charAt(0).toUpperCase() + t.slice(1)}
             </button>
           ))}
         </div>
@@ -1231,7 +1245,7 @@ export default function RecompTracker() {
         <div style={s.loading}>Loading…</div>
       ) : tab === "daily" ? (
         <div style={s.content}>
-          <div style={s.gridHeader}>
+          <div className="rc-grid-header" style={s.gridHeader}>
             <div style={s.paramLabelSpace} />
             {DAYS.map((d, i) => {
               const dis = isDayDisabled(week, i, disabled0);
@@ -1242,11 +1256,11 @@ export default function RecompTracker() {
               const dateLabel = colDate.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
               return (
                 <div key={d} style={{ ...s.dayHeader, opacity: dis ? 0.25 : 1 }}>
-                  <span style={{ ...s.dayName, color: perfect ? "#ff6b9d" : "#886677" }}>{d}</span>
+                  <span style={{ ...s.dayName, color: perfect ? "#EF88AD" : "#886677" }}>{d}</span>
                   <span style={s.dayDate}>{dateLabel}</span>
                   <span style={{
                     ...s.dayScore,
-                    color: dis ? "#332228" : perfect ? "#ff6b9d" : score >= params.length - 2 ? "#ffb6d3" : "#553344",
+                    color: dis ? "#332228" : perfect ? "#EF88AD" : score >= params.length - 2 ? "#EF88AD" : "#776655",
                     animation: perfect ? "gentleFloat 2s ease-in-out infinite" : "none",
                   }}>
                     {dis ? "\u2014" : perfect ? "\u{1F496}" : `${score}/${params.length}`}
@@ -1254,17 +1268,17 @@ export default function RecompTracker() {
                 </div>
               );
             })}
-            <div style={s.weeklyColHeader}>Wk</div>
+            <div className="rc-weekly-col-header" style={s.weeklyColHeader}>Wk</div>
           </div>
 
           {params.map((param) => {
             const hits = weeklyHits(param.id);
             const met = hits >= param.weeklyTarget;
             return (
-              <div key={param.id} style={s.row}>
+              <div key={param.id} className="rc-grid-row" style={s.row}>
                 <div style={s.paramLabel}>
                   <span style={s.paramIcon}>{param.icon}</span>
-                  <div>
+                  <div className="rc-param-label-text">
                     <div style={s.paramName}>{param.label}</div>
                     <div style={s.paramSub}>{param.subtext}</div>
                   </div>
@@ -1289,47 +1303,62 @@ export default function RecompTracker() {
                     </button>
                   );
                 })}
-                <div style={{ ...s.weeklyCount, color: met ? "#ff6b9d" : "#664455" }}>
+                <div className="rc-weekly-count" style={{ ...s.weeklyCount, color: met ? "#EF88AD" : "#887766" }}>
                   {hits}/{param.weeklyTarget}
                 </div>
               </div>
             );
           })}
 
-          <div style={s.legend}>
-            <span style={s.legendItem}><span style={{ ...s.dot, background: "#ff6b9d" }} /> On target</span>
-            <span style={s.legendItem}><span style={{ ...s.dot, background: "#ffb6d3" }} /> Close</span>
-            <span style={s.legendItem}><span style={{ ...s.dot, background: "#553344" }} /> Needs love</span>
-          </div>
         </div>
       ) : tab === "weekly" ? (
         <div style={s.content}>
           <div className="rc-weekly-grid" style={s.weeklyGrid}>
-            {WEEKLY_CHECKINS.map((item) => (
-              <div key={item.id} style={s.weeklyCard}>
-                <div style={s.weeklyCardHeader}>
-                  <span>{item.icon}</span>
-                  <span style={s.weeklyCardLabel}>{item.label}</span>
-                </div>
-                {item.type === "number" ? (
-                  <input type="number" step="0.1" style={s.numInput}
-                    value={data.weekly[item.id]}
-                    onChange={(e) => updateWeekly(item.id, e.target.value)}
-                    placeholder="\u2014"
-                  />
-                ) : (
-                  <div style={s.ratingRow}>
-                    {[1, 2, 3, 4, 5].map((v) => (
-                      <button key={v}
-                        className="rc-rating"
-                        style={{ ...s.ratingBtn, ...(data.weekly[item.id] === v ? s.ratingBtnActive : {}) }}
-                        onClick={() => updateWeekly(item.id, v)}
-                      >{v}</button>
-                    ))}
+            {WEEKLY_CHECKINS.map((item) => {
+              const prev = prevWeekData?.weekly?.[item.id];
+              const cur = data.weekly[item.id];
+              return (
+                <div key={item.id} style={s.weeklyCard}>
+                  <div style={s.weeklyCardHeader}>
+                    <span>{item.icon}</span>
+                    <span style={s.weeklyCardLabel}>{item.label}</span>
                   </div>
-                )}
-              </div>
-            ))}
+                  {item.type === "number" ? (
+                    <>
+                      <input type="number" step="0.1" style={s.numInput}
+                        value={cur}
+                        onChange={(e) => updateWeekly(item.id, e.target.value)}
+                        placeholder="\u2014"
+                      />
+                      {prev && prev !== "" && (
+                        <div style={s.weeklyDelta}>
+                          {cur && cur !== "" ? (() => {
+                            const diff = (parseFloat(cur) - parseFloat(prev)).toFixed(1);
+                            const sign = diff > 0 ? "\u2191" : diff < 0 ? "\u2193" : "";
+                            return `${sign} ${Math.abs(diff)} from ${prev}`;
+                          })() : `last week: ${prev}`}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <div style={s.ratingRow}>
+                        {[1, 2, 3, 4, 5].map((v) => (
+                          <button key={v}
+                            className="rc-rating"
+                            style={{ ...s.ratingBtn, ...(cur === v ? s.ratingBtnActive : {}) }}
+                            onClick={() => updateWeekly(item.id, v)}
+                          >{v}</button>
+                        ))}
+                      </div>
+                      {prev != null && (
+                        <div style={s.weeklyDelta}>last week: {prev}</div>
+                      )}
+                    </>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       ) : tab === "lifts" ? (
@@ -1344,21 +1373,6 @@ export default function RecompTracker() {
         </div>
       )}
 
-      <div style={s.protocol}>
-        <div style={s.protocolTitle}>YOUR PROTOCOL {"\u2728"}</div>
-        <div style={s.protocolGrid}>
-          {[
-            ["\u23F1\uFE0F", "16:8 IF daily"],
-            ["\u{1F525}", `${profile.calorieDeficit || 500} cal deficit`],
-            ["\u{1F357}", `${profile.proteinGoal || 120}g protein`],
-            ["\u{1F3CB}\uFE0F\u200D\u2640\uFE0F", "Strength 3x/wk"],
-            ["\u{1F6B6}\u200D\u2640\uFE0F", "10K walk 3x/wk"],
-            ["\u{1F483}", profile.bonusGoal || "5 min Dance"],
-          ].map(([icon, text], i) => (
-            <div key={i} style={s.protocolItem}><span>{icon}</span><span>{text}</span></div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
@@ -1374,23 +1388,23 @@ export const s = {
   progressWrap: {
     background: "rgba(26,10,16,0.95)",
     padding: "16px 20px 12px",
-    borderBottom: "1px solid rgba(255,107,157,0.12)",
+    borderBottom: "1px solid rgba(165,56,96,0.12)",
     position: "sticky", top: 0, zIndex: 20,
     backdropFilter: "blur(12px)",
   },
   progressHeader: {
     display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px",
   },
-  progressLabel: { fontSize: "13px", fontWeight: 700, color: "#ff85b3", letterSpacing: "2px" },
+  progressLabel: { fontSize: "13px", fontWeight: 700, color: "#EF88AD", letterSpacing: "2px" },
   progressMeta: { fontSize: "12px", color: "#886677" },
   progressTrack: {
     position: "relative", height: "8px",
-    background: "rgba(255,107,157,0.08)", borderRadius: "4px",
+    background: "rgba(165,56,96,0.08)", borderRadius: "4px",
     overflow: "visible", marginBottom: "24px",
   },
   progressFill: {
     height: "100%", borderRadius: "4px", transition: "width 0.6s ease",
-    boxShadow: "0 0 16px rgba(255,107,157,0.3)",
+    boxShadow: "0 0 16px rgba(165,56,96,0.3)",
   },
   milestone: {
     position: "absolute", top: "-4px", transform: "translateX(-50%)",
@@ -1399,20 +1413,19 @@ export const s = {
   milestoneDot: { width: "16px", height: "16px", borderRadius: "50%", transition: "all 0.3s" },
   milestoneLabel: { fontSize: "10px", fontWeight: 600, letterSpacing: "1px", whiteSpace: "nowrap" },
   progressDates: {
-    display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#553344",
+    display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#776655",
   },
   header: {
-    background: "linear-gradient(135deg, rgba(255,107,157,0.04) 0%, rgba(20,8,12,0.9) 100%)",
-    padding: "20px 20px 0",
-    borderBottom: "1px solid rgba(255,107,157,0.1)",
+    borderBottom: "1px solid rgba(165,56,96,0.1)",
   },
+  // Keep these for PublicProfile which still uses them
   headerTop: {
     display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "14px",
   },
   title: {
     margin: 0, fontSize: "32px", fontWeight: 800, letterSpacing: "6px", lineHeight: 1,
     fontFamily: "'Playfair Display', Georgia, serif",
-    background: "linear-gradient(135deg, #ff6b9d, #e84393, #ff85b3)",
+    background: "linear-gradient(135deg, #EF88AD, #A53860, #EF88AD)",
     WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
   },
   subtitle: { margin: "6px 0 0", fontSize: "13px", color: "#886677", letterSpacing: "1px" },
@@ -1420,26 +1433,59 @@ export const s = {
     position: "relative", width: "70px", height: "70px",
     display: "flex", alignItems: "center", justifyContent: "center",
   },
-  adherenceText: { position: "absolute", fontSize: "16px", fontWeight: 700, color: "#ff85b3" },
+  adherenceText: { position: "absolute", fontSize: "16px", fontWeight: 700, color: "#EF88AD" },
+  // ─── Compact top bar ───
+  topBar: {
+    display: "flex", justifyContent: "space-between", alignItems: "center",
+    padding: "10px 16px",
+    background: "rgba(26,10,16,0.9)",
+    borderBottom: "1px solid rgba(103,13,47,0.3)",
+  },
+  topBarLeft: {
+    display: "flex", alignItems: "center", gap: "10px",
+  },
+  topBarRight: {
+    display: "flex", alignItems: "center", gap: "10px",
+  },
+  topBarAdherence: {
+    fontSize: "14px", fontWeight: 700, color: "#EF88AD", marginLeft: "6px",
+  },
+  weekDatesCompact: {
+    fontSize: "11px", color: "#887766", display: "none",
+  },
+  syncDot: {
+    width: "8px", height: "8px", borderRadius: "50%", flexShrink: 0,
+    transition: "background 0.3s",
+  },
+  menuBtn: {
+    background: "none", border: "1px solid rgba(103,13,47,0.3)",
+    borderRadius: "8px", padding: "6px 8px", cursor: "pointer",
+    display: "flex", alignItems: "center", justifyContent: "center",
+  },
+  weekBtnSmall: {
+    background: "none", border: "none",
+    color: "#EF88AD", padding: "4px 8px",
+    cursor: "pointer", fontSize: "18px", fontFamily: "inherit",
+  },
   weekRow: { display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px" },
   weekBtn: {
-    background: "rgba(255,107,157,0.08)", border: "1px solid rgba(255,107,157,0.15)",
-    color: "#ff85b3", padding: "8px 16px", borderRadius: "8px",
+    background: "rgba(165,56,96,0.08)", border: "1px solid rgba(165,56,96,0.15)",
+    color: "#EF88AD", padding: "8px 16px", borderRadius: "8px",
     cursor: "pointer", fontSize: "18px", fontFamily: "inherit", transition: "all 0.2s",
   },
-  weekLabel: { fontSize: "16px", fontWeight: 700, color: "#ffb6d3", letterSpacing: "1px" },
-  weekDates: { fontSize: "12px", color: "#664455", marginTop: "2px" },
-  saveIndicator: { fontSize: "12px", color: "#ff6b9d", marginLeft: "auto", opacity: 0.7 },
+  weekLabel: { fontSize: "15px", fontWeight: 700, color: "#EF88AD", letterSpacing: "1px" },
+  weekDates: { fontSize: "12px", color: "#887766", marginTop: "2px" },
+  saveIndicator: { fontSize: "12px", color: "#EF88AD", marginLeft: "auto", opacity: 0.7 },
   tabs: { display: "flex", gap: 0 },
   tab: {
     flex: 1, background: "none", border: "none",
-    borderBottom: "2px solid transparent", color: "#664455",
+    borderBottom: "2px solid transparent", color: "#887766",
     padding: "12px 0", fontSize: "13px", fontFamily: "inherit",
     letterSpacing: "1px", cursor: "pointer", transition: "all 0.2s",
   },
-  tabActive: { color: "#ff85b3", borderBottomColor: "#ff6b9d" },
+  tabActive: { color: "#EF88AD", borderBottomColor: "#EF88AD" },
   content: { padding: "16px 12px", overflowX: "auto" },
-  loading: { padding: "40px", textAlign: "center", color: "#664455", fontSize: "15px" },
+  loading: { padding: "40px", textAlign: "center", color: "#887766", fontSize: "15px" },
   gridHeader: {
     display: "grid", gridTemplateColumns: "minmax(150px, 1fr) repeat(7, 44px) 48px",
     gap: "4px", marginBottom: "8px", alignItems: "end", minWidth: "fit-content",
@@ -1450,7 +1496,7 @@ export const s = {
     alignItems: "center", gap: "2px",
   },
   dayName: { fontSize: "13px", fontWeight: 700, letterSpacing: "1px" },
-  dayDate: { fontSize: "11px", fontWeight: 500, color: "#664455", letterSpacing: "0px" },
+  dayDate: { fontSize: "11px", fontWeight: 500, color: "#887766", letterSpacing: "0px" },
   dayScore: { fontSize: "11px", fontWeight: 600 },
   weeklyColHeader: { fontSize: "13px", fontWeight: 700, color: "#886677", textAlign: "center" },
   row: {
@@ -1460,102 +1506,93 @@ export const s = {
   paramLabel: { display: "flex", alignItems: "center", gap: "8px", paddingRight: "8px" },
   paramIcon: { fontSize: "18px", flexShrink: 0 },
   paramName: { fontSize: "13px", fontWeight: 600, color: "#e8c8d8", whiteSpace: "nowrap" },
-  paramSub: { fontSize: "11px", color: "#664455", whiteSpace: "nowrap" },
+  paramSub: { fontSize: "11px", color: "#887766", whiteSpace: "nowrap" },
   cell: {
     width: "44px", height: "44px",
-    border: "1px solid rgba(255,107,157,0.12)", borderRadius: "10px",
-    background: "rgba(255,107,157,0.03)", color: "#ff6b9d",
+    border: "1px solid rgba(165,56,96,0.12)", borderRadius: "10px",
+    background: "rgba(165,56,96,0.03)", color: "#EF88AD",
     fontSize: "16px", fontWeight: 700, cursor: "pointer",
     display: "flex", alignItems: "center", justifyContent: "center",
     transition: "all 0.2s ease", fontFamily: "inherit", padding: 0,
   },
   cellActive: {
-    background: "rgba(255,107,157,0.12)", border: "1px solid rgba(255,107,157,0.4)",
-    boxShadow: "0 0 12px rgba(255,107,157,0.15)", color: "#ff6b9d",
+    background: "rgba(165,56,96,0.12)", border: "1px solid rgba(165,56,96,0.4)",
+    boxShadow: "0 0 12px rgba(165,56,96,0.15)", color: "#EF88AD",
   },
   cellDisabled: {
-    background: "rgba(255,107,157,0.01)", border: "1px solid rgba(255,107,157,0.04)",
+    background: "rgba(165,56,96,0.01)", border: "1px solid rgba(165,56,96,0.04)",
     cursor: "not-allowed", opacity: 0.2,
   },
   weeklyCount: { fontSize: "13px", fontWeight: 700, textAlign: "center" },
-  legend: { display: "flex", gap: "16px", marginTop: "18px", justifyContent: "center" },
-  legendItem: { display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "#886677" },
-  dot: { width: "8px", height: "8px", borderRadius: "50%", display: "inline-block" },
   weeklyGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" },
   weeklyCard: {
-    background: "rgba(255,107,157,0.04)", border: "1px solid rgba(255,107,157,0.1)",
+    background: "rgba(165,56,96,0.04)", border: "1px solid rgba(165,56,96,0.1)",
     borderRadius: "14px", padding: "16px",
   },
   weeklyCardHeader: { display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px", fontSize: "15px" },
   weeklyCardLabel: { fontWeight: 600, color: "#e8c8d8" },
   numInput: {
-    width: "100%", background: "rgba(255,107,157,0.04)", border: "1px solid rgba(255,107,157,0.15)",
-    borderRadius: "10px", padding: "10px", color: "#ffb6d3",
+    width: "100%", background: "rgba(165,56,96,0.04)", border: "1px solid rgba(165,56,96,0.15)",
+    borderRadius: "10px", padding: "10px", color: "#EF88AD",
     fontSize: "20px", fontWeight: 700, fontFamily: "inherit",
     textAlign: "center", outline: "none", boxSizing: "border-box",
   },
   ratingRow: { display: "flex", gap: "6px" },
   ratingBtn: {
-    flex: 1, padding: "10px 0", background: "rgba(255,107,157,0.04)",
-    border: "1px solid rgba(255,107,157,0.12)", borderRadius: "10px",
-    color: "#664455", fontSize: "16px", fontWeight: 700,
+    flex: 1, padding: "10px 0", background: "rgba(165,56,96,0.04)",
+    border: "1px solid rgba(165,56,96,0.12)", borderRadius: "10px",
+    color: "#887766", fontSize: "16px", fontWeight: 700,
     cursor: "pointer", fontFamily: "inherit", transition: "all 0.15s",
   },
   ratingBtnActive: {
-    background: "rgba(255,107,157,0.15)", border: "1px solid rgba(255,107,157,0.4)", color: "#ff6b9d",
+    background: "rgba(165,56,96,0.15)", border: "1px solid rgba(165,56,96,0.4)", color: "#EF88AD",
+  },
+  weeklyDelta: {
+    fontSize: "11px", color: "#887766", marginTop: "6px", textAlign: "center",
+    letterSpacing: "0.3px",
   },
   notesArea: {
     width: "100%", minHeight: "300px",
-    background: "rgba(255,107,157,0.03)", border: "1px solid rgba(255,107,157,0.1)",
+    background: "rgba(165,56,96,0.03)", border: "1px solid rgba(165,56,96,0.1)",
     borderRadius: "14px", padding: "16px", color: "#e8c8d8",
     fontSize: "15px", fontFamily: "inherit", lineHeight: 1.6,
     resize: "vertical", outline: "none", boxSizing: "border-box",
   },
-  protocol: {
-    margin: "16px 12px", padding: "16px",
-    background: "rgba(255,107,157,0.03)", border: "1px solid rgba(255,107,157,0.08)",
-    borderRadius: "14px",
-  },
-  protocolTitle: {
-    fontSize: "12px", fontWeight: 700, letterSpacing: "3px", color: "#886677", marginBottom: "12px",
-  },
-  protocolGrid: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" },
-  protocolItem: { display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#aa7799" },
   loginBtn: {
-    background: "linear-gradient(135deg, #ff6b9d, #e84393)",
+    background: "linear-gradient(135deg, #A53860, #EF88AD)",
     border: "none", color: "#fff", padding: "14px 40px", borderRadius: "50px",
     fontSize: "16px", fontWeight: 700, cursor: "pointer", letterSpacing: "1px",
-    boxShadow: "0 4px 20px rgba(255,107,157,0.4)",
+    boxShadow: "0 4px 20px rgba(165,56,96,0.4)",
     fontFamily: "inherit",
   },
   userBar: {
     display: "flex", justifyContent: "space-between", alignItems: "center",
     padding: "8px 20px",
-    background: "rgba(255,107,157,0.04)",
-    borderBottom: "1px solid rgba(255,107,157,0.08)",
+    background: "rgba(165,56,96,0.04)",
+    borderBottom: "1px solid rgba(165,56,96,0.08)",
   },
   userInfo: {
-    fontSize: "13px", color: "#ff85b3", fontWeight: 600, letterSpacing: "0.5px",
+    fontSize: "13px", color: "#EF88AD", fontWeight: 600, letterSpacing: "0.5px",
     overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "70%",
   },
   logoutBtn: {
-    background: "rgba(255,107,157,0.08)", border: "1px solid rgba(255,107,157,0.2)",
-    color: "#ff85b3", padding: "6px 16px", borderRadius: "20px",
+    background: "rgba(165,56,96,0.08)", border: "1px solid rgba(165,56,96,0.2)",
+    color: "#EF88AD", padding: "6px 16px", borderRadius: "20px",
     fontSize: "12px", fontWeight: 600, cursor: "pointer",
     fontFamily: "inherit", letterSpacing: "0.5px",
   },
   signInSmallBtn: {
-    background: "linear-gradient(135deg, #ff6b9d, #e84393)",
+    background: "linear-gradient(135deg, #A53860, #EF88AD)",
     border: "none", color: "#fff", padding: "6px 18px", borderRadius: "20px",
     fontSize: "12px", fontWeight: 700, cursor: "pointer",
     fontFamily: "inherit", letterSpacing: "0.5px",
-    boxShadow: "0 2px 10px rgba(255,107,157,0.3)",
+    boxShadow: "0 2px 10px rgba(165,56,96,0.3)",
   },
   // Upgrade banner styles
   upgradeBanner: {
     padding: "12px 20px",
-    background: "linear-gradient(135deg, rgba(255,107,157,0.1), rgba(232,67,147,0.08))",
-    borderBottom: "1px solid rgba(255,107,157,0.2)",
+    background: "linear-gradient(135deg, rgba(165,56,96,0.12), rgba(103,13,47,0.1))",
+    borderBottom: "1px solid rgba(165,56,96,0.2)",
     animation: "slideBannerIn 0.4s ease-out",
   },
   upgradeBannerInner: {
@@ -1563,21 +1600,21 @@ export const s = {
     gap: "12px", flexWrap: "wrap",
   },
   upgradeBannerTitle: {
-    fontSize: "14px", fontWeight: 700, color: "#ff85b3", marginBottom: "2px",
+    fontSize: "14px", fontWeight: 700, color: "#EF88AD", marginBottom: "2px",
   },
   upgradeBannerText: {
     fontSize: "12px", color: "#886677",
   },
   upgradeSaveBtn: {
-    background: "linear-gradient(135deg, #ff6b9d, #e84393)",
+    background: "linear-gradient(135deg, #A53860, #EF88AD)",
     border: "none", color: "#fff", padding: "8px 20px", borderRadius: "20px",
     fontSize: "12px", fontWeight: 700, cursor: "pointer",
     fontFamily: "inherit", letterSpacing: "0.5px",
-    boxShadow: "0 2px 12px rgba(255,107,157,0.3)",
+    boxShadow: "0 2px 12px rgba(165,56,96,0.3)",
     whiteSpace: "nowrap",
   },
   upgradeDismissBtn: {
-    background: "none", border: "1px solid rgba(255,107,157,0.15)",
+    background: "none", border: "1px solid rgba(165,56,96,0.15)",
     color: "#886677", width: "28px", height: "28px", borderRadius: "50%",
     fontSize: "12px", cursor: "pointer", display: "flex",
     alignItems: "center", justifyContent: "center", padding: 0,
@@ -1586,32 +1623,32 @@ export const s = {
   // Onboarding styles
   onboardCard: {
     textAlign: "center", padding: "40px 32px", borderRadius: "24px",
-    background: "linear-gradient(135deg, rgba(255,107,157,0.08), rgba(255,182,211,0.04))",
-    border: "1px solid rgba(255,107,157,0.2)",
-    boxShadow: "0 0 60px rgba(255,107,157,0.1)",
+    background: "linear-gradient(135deg, rgba(165,56,96,0.1), rgba(103,13,47,0.06))",
+    border: "1px solid rgba(165,56,96,0.2)",
+    boxShadow: "0 0 60px rgba(165,56,96,0.1)",
     maxWidth: "440px", width: "90%",
   },
   onboardLabel: {
-    display: "block", fontSize: "11px", fontWeight: 700, color: "#ff85b3",
+    display: "block", fontSize: "11px", fontWeight: 700, color: "#EF88AD",
     letterSpacing: "2px", textTransform: "uppercase", marginBottom: "6px",
     textAlign: "left",
   },
   onboardDateInput: {
-    width: "100%", background: "rgba(255,107,157,0.06)", border: "1px solid rgba(255,107,157,0.2)",
-    borderRadius: "12px", padding: "12px 16px", color: "#ffb6d3",
+    width: "100%", background: "rgba(165,56,96,0.06)", border: "1px solid rgba(165,56,96,0.2)",
+    borderRadius: "12px", padding: "12px 16px", color: "#EF88AD",
     fontSize: "16px", fontWeight: 600, fontFamily: "inherit",
     textAlign: "center", outline: "none", boxSizing: "border-box",
     marginBottom: "16px", colorScheme: "dark",
   },
   onboardTextInput: {
-    width: "100%", background: "rgba(255,107,157,0.06)", border: "1px solid rgba(255,107,157,0.2)",
-    borderRadius: "12px", padding: "12px 16px", color: "#ffb6d3",
+    width: "100%", background: "rgba(165,56,96,0.06)", border: "1px solid rgba(165,56,96,0.2)",
+    borderRadius: "12px", padding: "12px 16px", color: "#EF88AD",
     fontSize: "16px", fontWeight: 600, fontFamily: "inherit",
     outline: "none", boxSizing: "border-box", marginBottom: "4px",
   },
   onboardNumInput: {
-    width: "100%", background: "rgba(255,107,157,0.06)", border: "1px solid rgba(255,107,157,0.2)",
-    borderRadius: "12px", padding: "12px 16px", color: "#ffb6d3",
+    width: "100%", background: "rgba(165,56,96,0.06)", border: "1px solid rgba(165,56,96,0.2)",
+    borderRadius: "12px", padding: "12px 16px", color: "#EF88AD",
     fontSize: "20px", fontWeight: 700, fontFamily: "inherit",
     textAlign: "center", outline: "none", boxSizing: "border-box",
   },
@@ -1620,16 +1657,16 @@ export const s = {
     marginBottom: "16px",
   },
   onboardUnit: {
-    fontSize: "11px", color: "#664455", marginTop: "4px", textAlign: "center",
+    fontSize: "11px", color: "#887766", marginTop: "4px", textAlign: "center",
   },
   onboardHint: {
-    fontSize: "12px", color: "#664455", marginBottom: "16px", textAlign: "left",
+    fontSize: "12px", color: "#887766", marginBottom: "16px", textAlign: "left",
   },
   onboardError: {
     fontSize: "13px", color: "#ff4757", marginBottom: "12px", fontWeight: 600,
   },
   onboardPreview: {
-    background: "rgba(255,107,157,0.04)", border: "1px solid rgba(255,107,157,0.1)",
+    background: "rgba(165,56,96,0.04)", border: "1px solid rgba(165,56,96,0.1)",
     borderRadius: "14px", padding: "16px", marginBottom: "20px",
   },
   onboardPreviewRow: {
@@ -1637,9 +1674,9 @@ export const s = {
     padding: "6px 0",
   },
   onboardPreviewLabel: { fontSize: "13px", color: "#886677" },
-  onboardPreviewValue: { fontSize: "14px", fontWeight: 600, color: "#ffb6d3" },
+  onboardPreviewValue: { fontSize: "14px", fontWeight: 600, color: "#EF88AD" },
   profileIconBtn: {
-    background: "rgba(255,107,157,0.08)", border: "1px solid rgba(255,107,157,0.15)",
+    background: "rgba(165,56,96,0.08)", border: "1px solid rgba(165,56,96,0.15)",
     borderRadius: "50%", width: "30px", height: "30px",
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", padding: 0,
@@ -1651,28 +1688,28 @@ export const s = {
   },
   profilePanel: {
     background: "linear-gradient(135deg, #1a0a10, #160a0f)",
-    border: "1px solid rgba(255,107,157,0.2)",
+    border: "1px solid rgba(165,56,96,0.2)",
     borderRadius: "20px", padding: "28px 24px",
     width: "90%", maxWidth: "380px",
-    boxShadow: "0 0 40px rgba(255,107,157,0.1)",
+    boxShadow: "0 0 40px rgba(165,56,96,0.1)",
   },
   profileCloseBtn: {
     background: "none", border: "none", color: "#886677",
     fontSize: "18px", cursor: "pointer", padding: "4px 8px",
   },
   profileSection: {
-    background: "rgba(255,107,157,0.04)", border: "1px solid rgba(255,107,157,0.08)",
+    background: "rgba(165,56,96,0.04)", border: "1px solid rgba(165,56,96,0.08)",
     borderRadius: "12px", padding: "12px 16px",
   },
   profileRow: {
     display: "flex", justifyContent: "space-between", alignItems: "center",
-    padding: "8px 0", borderBottom: "1px solid rgba(255,107,157,0.06)",
+    padding: "8px 0", borderBottom: "1px solid rgba(165,56,96,0.06)",
   },
   profileLabel: { fontSize: "13px", color: "#886677" },
-  profileVal: { fontSize: "13px", fontWeight: 600, color: "#ffb6d3" },
+  profileVal: { fontSize: "13px", fontWeight: 600, color: "#EF88AD" },
   profileExportBtn: {
-    background: "rgba(255,107,157,0.08)", border: "1px solid rgba(255,107,157,0.2)",
-    color: "#ff85b3", padding: "12px 20px", borderRadius: "12px",
+    background: "rgba(165,56,96,0.08)", border: "1px solid rgba(165,56,96,0.2)",
+    color: "#EF88AD", padding: "12px 20px", borderRadius: "12px",
     fontSize: "14px", fontWeight: 600, cursor: "pointer",
     fontFamily: "inherit", letterSpacing: "0.5px",
   },
@@ -1684,13 +1721,13 @@ export const s = {
   },
   profileToggle: {
     width: "36px", height: "20px", borderRadius: "10px",
-    border: "1px solid rgba(255,107,157,0.2)",
+    border: "1px solid rgba(165,56,96,0.2)",
     cursor: "pointer", position: "relative", padding: 0,
     transition: "background 0.2s",
   },
   profileToggleDot: {
     width: "14px", height: "14px", borderRadius: "50%",
-    background: "#ff85b3", position: "absolute", top: "2px", left: "2px",
+    background: "#EF88AD", position: "absolute", top: "2px", left: "2px",
     transition: "transform 0.2s",
   },
 };

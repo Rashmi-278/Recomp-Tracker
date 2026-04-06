@@ -70,8 +70,8 @@ export default function PublicProfile() {
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
         `}</style>
         <h1 style={s.title}>RECOMP</h1>
-        <p style={{ color: "#886677", fontSize: "16px" }}>User <strong style={{ color: "#ff85b3" }}>/{username}</strong> not found</p>
-        <Link to="/" style={{ color: "#ff6b9d", textDecoration: "none", fontSize: "14px" }}>← Go to tracker</Link>
+        <p style={{ color: "#886677", fontSize: "16px" }}>User <strong style={{ color: "#EF88AD" }}>/{username}</strong> not found</p>
+        <Link to="/" style={{ color: "#EF88AD", textDecoration: "none", fontSize: "14px" }}>← Go to tracker</Link>
       </div>
     );
   }
@@ -138,15 +138,15 @@ export default function PublicProfile() {
             ...s.progressFill,
             width: `${pct}%`,
             background: pct >= 75
-              ? "linear-gradient(90deg, #ff6b9d, #e84393, #a855f7)"
+              ? "linear-gradient(90deg, #EF88AD, #A53860, #a855f7)"
               : pct >= 40
-              ? "linear-gradient(90deg, #ff6b9d, #ffb6d3)"
-              : "linear-gradient(90deg, #ffb6d3, #ffd1e3)",
+              ? "linear-gradient(90deg, #EF88AD, #EF88AD)"
+              : "linear-gradient(90deg, #EF88AD, #A53860)",
           }} />
         </div>
         <div style={s.progressDates}>
           <span>{dates.startLabel}</span>
-          <span style={{ color: "#ff6b9d", fontWeight: 700, fontSize: "12px" }}>/{profile.username}'s recomp</span>
+          <span style={{ color: "#EF88AD", fontWeight: 700, fontSize: "12px" }}>/{profile.username}'s recomp</span>
           <span>{dates.endLabel}</span>
         </div>
       </div>
@@ -168,11 +168,11 @@ export default function PublicProfile() {
             <svg width="70" height="70" viewBox="0 0 70 70">
               <defs>
                 <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ff6b9d" />
-                  <stop offset="100%" stopColor="#e84393" />
+                  <stop offset="0%" stopColor="#EF88AD" />
+                  <stop offset="100%" stopColor="#A53860" />
                 </linearGradient>
               </defs>
-              <circle cx="35" cy="35" r="28" fill="none" stroke="rgba(255,107,157,0.1)" strokeWidth="5" />
+              <circle cx="35" cy="35" r="28" fill="none" stroke="rgba(165,56,96,0.1)" strokeWidth="5" />
               <circle cx="35" cy="35" r="28" fill="none" stroke="url(#ringGrad)" strokeWidth="5"
                 strokeDasharray={`${(overallAdherence / 100) * 175.9} 175.9`}
                 strokeLinecap="round" transform="rotate(-90 35 35)"
@@ -185,7 +185,7 @@ export default function PublicProfile() {
 
         {allWeeksData.length > 0 && (
           <div style={{ margin: "12px 0 0", display: "flex", flexDirection: "column", gap: "6px" }}>
-            <div style={{ fontSize: "11px", fontWeight: 700, color: "#664455", letterSpacing: "1px", marginBottom: "2px" }}>
+            <div style={{ fontSize: "11px", fontWeight: 700, color: "#887766", letterSpacing: "1px", marginBottom: "2px" }}>
               WEEKLY ADHERENCE
             </div>
             {allWeeksData.map((weekData, wk) => {
@@ -202,20 +202,20 @@ export default function PublicProfile() {
               return (
                 <div key={wk} style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}
                   onClick={() => setWeek(wk)}>
-                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#ff6b9d" : "#553344", width: "42px", flexShrink: 0, fontWeight: isCurrentWk ? 700 : 400 }}>
+                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#EF88AD" : "#776655", width: "42px", flexShrink: 0, fontWeight: isCurrentWk ? 700 : 400 }}>
                     Wk {wk + 1}
                   </span>
-                  <div style={{ flex: 1, height: "6px", background: "rgba(255,107,157,0.08)", borderRadius: "3px", overflow: "hidden" }}>
+                  <div style={{ flex: 1, height: "6px", background: "rgba(165,56,96,0.08)", borderRadius: "3px", overflow: "hidden" }}>
                     <div style={{
                       height: "100%", borderRadius: "3px",
                       width: `${pctWk}%`,
-                      background: pctWk >= 75 ? "linear-gradient(90deg, #ff6b9d, #e84393)"
-                        : pctWk >= 40 ? "linear-gradient(90deg, #ffb6d3, #ff6b9d)"
-                        : "rgba(255,107,157,0.3)",
+                      background: pctWk >= 75 ? "linear-gradient(90deg, #EF88AD, #A53860)"
+                        : pctWk >= 40 ? "linear-gradient(90deg, #EF88AD, #EF88AD)"
+                        : "rgba(165,56,96,0.3)",
                       transition: "width 0.5s ease",
                     }} />
                   </div>
-                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#ff6b9d" : "#664455", width: "32px", textAlign: "right", flexShrink: 0 }}>
+                  <span style={{ fontSize: "10px", color: isCurrentWk ? "#EF88AD" : "#887766", width: "32px", textAlign: "right", flexShrink: 0 }}>
                     {pctWk}%
                   </span>
                 </div>
@@ -247,11 +247,11 @@ export default function PublicProfile() {
             const dateLabel = colDate.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
             return (
               <div key={d} style={{ ...s.dayHeader, opacity: dis ? 0.25 : 1 }}>
-                <span style={{ ...s.dayName, color: perfect ? "#ff6b9d" : "#886677" }}>{d}</span>
+                <span style={{ ...s.dayName, color: perfect ? "#EF88AD" : "#886677" }}>{d}</span>
                 <span style={s.dayDate}>{dateLabel}</span>
                 <span style={{
                   ...s.dayScore,
-                  color: dis ? "#332228" : perfect ? "#ff6b9d" : score >= params.length - 2 ? "#ffb6d3" : "#553344",
+                  color: dis ? "#332228" : perfect ? "#EF88AD" : score >= params.length - 2 ? "#EF88AD" : "#776655",
                 }}>
                   {dis ? "—" : perfect ? "💖" : `${score}/${params.length}`}
                 </span>
@@ -288,7 +288,7 @@ export default function PublicProfile() {
                   </div>
                 );
               })}
-              <div style={{ ...s.weeklyCount, color: met ? "#ff6b9d" : "#664455" }}>
+              <div style={{ ...s.weeklyCount, color: met ? "#EF88AD" : "#887766" }}>
                 {hits}/{param.weeklyTarget}
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function PublicProfile() {
       </div>
 
       <div style={{ textAlign: "center", padding: "20px" }}>
-        <Link to="/" style={{ color: "#ff6b9d", textDecoration: "none", fontSize: "14px" }}>Start your own recomp →</Link>
+        <Link to="/" style={{ color: "#EF88AD", textDecoration: "none", fontSize: "14px" }}>Start your own recomp →</Link>
       </div>
     </div>
   );
